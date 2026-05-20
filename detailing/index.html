@@ -4,178 +4,192 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Book Your Detailing — NEBO UltraWash</title>
-<meta name="description" content="Book your auto detailing appointment with NEBO UltraWash. Pick your vehicle size, package, and time slot. Ceramic, PPF, wrap, tint, fine detailing.">
+<meta name="description" content="Book your auto detailing appointment with NEBO UltraWash. Pick your vehicle, package, date and time.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#0d3fd6">
 <link rel="canonical" href="https://nebo-financing-form.vercel.app/detailing">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="NEBO UltraWash">
 <meta property="og:title" content="Book Your Detailing — NEBO UltraWash">
-<meta property="og:description" content="Premium auto detailing appointment booking. Pick your vehicle, package, date and time.">
+<meta property="og:description" content="Pick your vehicle, package, and time. Simple, clean detailing booking.">
 <meta property="og:image" content="https://nebo-financing-form.vercel.app/assets/nebo-financing-banner.jpg">
 <meta property="og:url" content="https://nebo-financing-form.vercel.app/detailing">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"AutoDetailing","name":"NEBO UltraWash","url":"https://nebo-financing-form.vercel.app/detailing","logo":"https://nebo-financing-form.vercel.app/assets/nebo-logo.png","description":"Auto detailing appointment booking — ceramic coating, PPF, vinyl wrap, window tinting, fine detailing.","makesOffer":{"@type":"Offer","name":"Detailing Appointment Booking"}}
+{"@context":"https://schema.org","@type":"AutoDetailing","name":"NEBO UltraWash","url":"https://nebo-financing-form.vercel.app/detailing","logo":"https://nebo-financing-form.vercel.app/assets/nebo-logo.png","description":"Auto detailing appointment booking."}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Archivo:ital,wght@0,600;0,700;0,800;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Archivo:ital,wght@0,700;0,800;1,800;1,900&display=swap" rel="stylesheet">
 <style>
   :root{
     --blue:#0d3fd6;--blue-deep:#06208f;--blue-bright:#1f63ff;
-    --cyan:#36ccff;--gold:#ffc21a;--magenta:#ff2e6e;
-    --ink:#0a1530;--mut:#5d6b8f;--good:#16a34a;
+    --cyan:#36ccff;--magenta:#ff2e6e;
+    --ink:#0a1530;--mut:#5d6b8f;--mut2:#8b97a4;--good:#16a34a;
+    --bg:#f4f6fb;--card:#ffffff;--line:#e4e9f2;--line2:#cfd9f5;
     --field-bg:#f3f6ff;--field-line:#cfd9f5;--field-line-on:#1f63ff;
-    --r:16px;--rs:12px;--shadow:0 10px 30px -8px rgba(6,32,143,.35);
+    --r:14px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-  body{font-family:"Inter",system-ui,sans-serif;color:var(--ink);background:#06208f;-webkit-font-smoothing:antialiased;line-height:1.55}
+  body{font-family:"Inter",system-ui,sans-serif;color:var(--ink);background:var(--bg);
+    -webkit-font-smoothing:antialiased;line-height:1.55;min-height:100vh}
   img{max-width:100%;display:block}
-  .display{font-family:"Archivo",system-ui,sans-serif;font-style:italic;font-weight:900;letter-spacing:-.02em;line-height:.92}
+  a{color:var(--blue);text-decoration:none}
 
-  .bg{position:absolute;top:0;left:0;right:0;height:480px;z-index:-1;pointer-events:none;
-    background:linear-gradient(180deg,#1340de 0%,#0d3fd6 60%,#06208f 100%)}
-  .bg:before{content:"";position:absolute;inset:0;
-    background:url("/assets/bg-bubbles.jpg") repeat;background-size:120% auto;opacity:.85;
-    -webkit-mask-image:linear-gradient(to bottom,#000 0,#000 180px,transparent 380px);
-    mask-image:linear-gradient(to bottom,#000 0,#000 180px,transparent 380px)}
+  /* ---- slim top bar ---- */
+  .topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);
+    backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line)}
+  .topbar .inner{max-width:1100px;margin:0 auto;padding:14px 20px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .brand img{height:30px;width:auto;filter:invert(15%) sepia(98%) saturate(3500%) hue-rotate(218deg) brightness(85%)}
+  .brand .nm{font-family:"Archivo";font-style:italic;font-weight:900;font-size:15px;letter-spacing:-.01em;color:var(--ink)}
+  .brand .nm small{display:block;font-size:9px;font-weight:800;letter-spacing:.32em;color:var(--blue);margin-top:-2px}
+  .topbar .tools a{font-size:13px;font-weight:600;color:var(--mut);padding:8px 10px}
+  .topbar .tools a:hover{color:var(--ink)}
 
-  .shell{max-width:1180px;margin:0 auto;padding:18px 16px 60px}
-  .grid{display:grid;grid-template-columns:1fr;gap:18px}
+  /* ---- page shell ---- */
+  .wrap{max-width:1100px;margin:0 auto;padding:32px 20px 80px}
 
-  .hero{position:relative;border-radius:var(--r);overflow:hidden;background:transparent;color:#fff;text-align:center}
-  .hero .hero-inner{padding:30px 22px 26px;position:relative;z-index:2}
-  .logo{height:88px;width:auto;display:block;margin:0 auto 4px;
-    filter:drop-shadow(0 0 28px rgba(6,32,143,.95)) drop-shadow(0 0 14px rgba(6,32,143,.85))
-      drop-shadow(0 3px 8px rgba(0,8,40,.55)) drop-shadow(0 0 18px rgba(54,204,255,.28))}
-  @media(max-width:520px){.logo{height:76px}}
-  .hero h1{margin:18px 0 4px}
-  .hero h1 .pct{font-size:clamp(40px,12vw,72px);display:block;color:#fff;letter-spacing:-.02em;
-    text-shadow:0 1px 0 #bcd2ff,0 2px 0 #6f93f0,0 3px 0 #3f6ae0,0 4px 0 #2b53d2,
-      0 6px 0 #1f43c0,0 8px 0 #163399,0 8px 16px rgba(2,10,46,.55),0 0 24px rgba(54,204,255,.45)}
-  .tagpill{display:inline-block;background:var(--gold);color:#3a2600;font-weight:800;font-size:13px;
-    letter-spacing:.04em;padding:8px 16px;border-radius:999px;transform:skew(-7deg);margin-top:12px;text-transform:uppercase}
-  .tagpill span{display:inline-block;transform:skew(7deg)}
-  .svc-line{margin-top:18px;font-family:"Archivo";font-style:italic;font-weight:800;font-size:11.5px;
-    letter-spacing:.16em;text-transform:uppercase;color:rgba(220,235,255,.88);line-height:1.7}
-  .svc-line i{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--cyan);
-    vertical-align:middle;margin:0 9px 3px;opacity:.75}
-
-  .card{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
-  .card-head{padding:24px 22px 18px;background:linear-gradient(180deg,#f5f8ff,#fff);border-bottom:1px solid #eef2fb}
-  .head-pill{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;font-weight:800;color:var(--blue);
-    background:#e7eeff;border-radius:999px;padding:5px 12px;letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px}
-  .head-pill .dot{width:6px;height:6px;border-radius:50%;background:var(--good);
+  /* ---- hero (simple) ---- */
+  .hero{text-align:center;padding:24px 16px 36px}
+  .eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;
+    color:var(--blue);background:#e7eeff;border-radius:999px;padding:5px 12px;
+    letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--good);
     box-shadow:0 0 0 3px rgba(22,163,74,.18);animation:pulse 1.8s ease-in-out infinite}
   @keyframes pulse{50%{box-shadow:0 0 0 6px rgba(22,163,74,0)}}
-  .card-head h2{font-family:"Archivo";font-style:italic;font-weight:800;font-size:24px;color:var(--ink);letter-spacing:-.02em}
-  .card-head p{color:var(--mut);font-size:14px;margin-top:5px}
-  form{padding:22px}
+  .hero h1{font-family:"Archivo";font-style:italic;font-weight:900;
+    font-size:clamp(30px,5.6vw,52px);letter-spacing:-1.2px;line-height:1.05;color:var(--ink)}
+  .hero h1 em{font-style:italic;color:var(--blue);font-weight:900}
+  .hero p{margin-top:14px;color:var(--mut);font-size:clamp(15px,2.4vw,17px);max-width:60ch;
+    margin-left:auto;margin-right:auto;line-height:1.55}
 
-  .progress{display:flex;gap:8px;margin:0 0 20px;align-items:center}
-  .progress .seg{flex:1;height:6px;border-radius:99px;background:#eaeef9;overflow:hidden;position:relative}
-  .progress .seg i{position:absolute;inset:0;background:linear-gradient(90deg,#1f63ff,#36ccff);
-    transform:translateX(-100%);transition:transform .45s cubic-bezier(.2,.85,.25,1)}
-  .progress .seg.on i{transform:translateX(0)}
-  .progress .lbl{font-size:12px;font-weight:700;color:var(--mut);white-space:nowrap}
-  .progress .lbl b{color:var(--blue)}
-
-  .step{display:none;animation:stepIn .35s cubic-bezier(.2,.85,.25,1)}
+  /* ---- step section (replace each other) ---- */
+  .step{display:none;animation:in .4s ease}
   .step.on{display:block}
-  @keyframes stepIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-  .step-h{font-family:"Archivo";font-style:italic;font-weight:800;font-size:20px;color:var(--ink);letter-spacing:-.01em;margin-bottom:4px}
-  .step-sub{color:var(--mut);font-size:13.5px;margin-bottom:18px}
+  @keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .step-head{display:flex;align-items:baseline;justify-content:space-between;gap:14px;
+    flex-wrap:wrap;margin:8px 0 22px}
+  .step-head h2{font-family:"Archivo";font-style:italic;font-weight:800;font-size:clamp(22px,3.8vw,28px);
+    letter-spacing:-.5px;color:var(--ink)}
+  .step-head .step-num{font-family:"Archivo";font-style:italic;font-weight:900;font-size:11px;
+    color:var(--mut);letter-spacing:.16em;text-transform:uppercase}
+  .step-head .step-num b{color:var(--blue)}
+  .change{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;
+    color:var(--mut);background:transparent;border:0;cursor:pointer;padding:0;margin-bottom:14px}
+  .change:hover{color:var(--blue)}
 
-  /* vehicle size cards */
-  .veh-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .veh{position:relative;cursor:pointer;border:1.5px solid #e2e8f3;border-radius:14px;
-    padding:16px 12px 14px;text-align:center;user-select:none;background:#fff;transition:.18s}
-  .veh:hover{border-color:#b9c8ee;background:#fafcff}
-  .veh input{position:absolute;opacity:0;pointer-events:none}
-  .veh .chk{position:absolute;top:10px;right:10px;width:20px;height:20px;border-radius:50%;
-    border:2px solid #c6d0e3;background:#fff;transition:.18s;display:grid;place-items:center}
-  .veh .chk:after{content:"";width:6px;height:10px;border:solid #fff;border-width:0 2.2px 2.2px 0;
-    transform:rotate(45deg) scale(0);opacity:0;margin-top:-2px;transition:.18s}
-  .veh.on{border-color:var(--blue);background:#f3f6ff;box-shadow:0 0 0 3px rgba(31,99,255,.18)}
-  .veh.on .chk{border-color:var(--blue);background:var(--blue)}
-  .veh.on .chk:after{transform:rotate(45deg) scale(1);opacity:1}
-  .veh .ic{width:64px;height:42px;margin:6px auto 10px;border-radius:10px;display:grid;place-items:center;transition:.18s}
+  /* ---- summary chips (shown after selection) ---- */
+  .chosen{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+  .chosen .chip{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;
+    color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:999px;
+    padding:6px 10px 6px 14px;line-height:1}
+  .chosen .chip .lbl{font-size:10px;font-weight:800;color:var(--mut);letter-spacing:.12em;text-transform:uppercase}
+  .chosen .chip button{font:inherit;font-size:11px;font-weight:700;color:var(--blue);background:#e7eeff;
+    border:0;border-radius:999px;padding:3px 8px;cursor:pointer}
+  .chosen .chip button:hover{background:#d8e3ff}
+
+  /* ---- vehicle grid (autospa-style cards) ---- */
+  .veh-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  @media(min-width:680px){.veh-grid{grid-template-columns:repeat(3,1fr)}}
+  .veh{position:relative;cursor:pointer;border:1px solid var(--line);border-radius:18px;
+    background:var(--card);padding:24px 18px 22px;text-align:center;
+    transition:transform .2s cubic-bezier(.2,.8,.25,1),box-shadow .2s,border-color .18s;
+    box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 8px 20px -14px rgba(13,42,120,.18)}
+  .veh:hover{transform:translateY(-3px);border-color:var(--blue);
+    box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 18px 30px -14px rgba(13,42,120,.3)}
+  .veh .ic{width:88px;height:56px;margin:0 auto 12px;display:grid;place-items:center}
   .veh .ic svg{width:100%;height:100%}
-  .veh .ic .stk{stroke:var(--blue);stroke-width:2;stroke-linejoin:round;stroke-linecap:round;fill:none}
+  .veh .ic .stk{stroke:var(--blue);stroke-width:2.2;stroke-linejoin:round;stroke-linecap:round;fill:none}
   .veh .ic .fil{fill:var(--cyan);opacity:.18}
-  .veh.on .ic{background:linear-gradient(160deg,#3a78ff,#0d3fd6)}
-  .veh.on .ic .stk{stroke:#fff}
-  .veh.on .ic .fil{fill:#fff;opacity:.32}
-  .veh .nm{font-family:"Archivo";font-style:italic;font-weight:800;font-size:14px;color:var(--ink);text-transform:uppercase;letter-spacing:.01em}
-  .veh .ex{font-size:11px;color:var(--mut);margin-top:3px;font-weight:500}
+  .veh .nm{font-family:"Archivo";font-style:italic;font-weight:800;font-size:17px;
+    color:var(--ink);letter-spacing:-.01em;text-transform:uppercase}
+  .veh .ex{font-size:12px;color:var(--mut);margin-top:5px;line-height:1.45}
+  .veh .from{margin-top:12px;font-size:12px;font-weight:700;color:var(--blue);
+    letter-spacing:.06em;text-transform:uppercase}
+  .veh .from b{font-family:"Archivo";font-style:italic;font-weight:900;font-size:15px;letter-spacing:0}
+  .veh .cta{margin-top:14px;display:inline-block;font-family:"Archivo";font-style:italic;font-weight:800;
+    font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:#fff;
+    background:linear-gradient(180deg,#3a78ff,#0d3fd6);padding:9px 18px;border-radius:10px;
+    box-shadow:0 8px 18px -8px rgba(13,63,214,.45)}
 
-  /* package cards */
-  .pkg{position:relative;cursor:pointer;border:1.5px solid #e2e8f3;border-radius:14px;padding:18px 16px;
-    background:#fff;transition:.18s;text-align:left;display:flex;flex-direction:column;gap:6px}
-  .pkg+.pkg{margin-top:10px}
-  .pkg:hover{border-color:#b9c8ee;background:#fafcff}
-  .pkg input{position:absolute;opacity:0;pointer-events:none}
-  .pkg.on{border-color:var(--blue);background:#f3f6ff;box-shadow:0 0 0 3px rgba(31,99,255,.18)}
-  .pkg .pkg-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
-  .pkg .pkg-name{font-family:"Archivo";font-style:italic;font-weight:800;font-size:17px;color:var(--ink);letter-spacing:-.01em}
-  .pkg .pkg-price{font-family:"Archivo";font-style:italic;font-weight:900;font-size:18px;color:var(--blue);white-space:nowrap}
-  .pkg .pkg-from{font-size:10px;color:var(--mut);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
-  .pkg .pkg-desc{font-size:13.5px;color:var(--mut);line-height:1.55}
-  .pkg .pkg-feat{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
-  .pkg .pkg-feat span{font-size:11px;font-weight:700;color:var(--blue);background:#e7eeff;padding:3px 8px;border-radius:6px}
-  .pkg .pop{position:absolute;top:-10px;left:50%;transform:translateX(-50%);
-    font-family:"Archivo";font-style:italic;font-weight:900;font-size:10px;letter-spacing:.1em;text-transform:uppercase;
-    color:#fff;background:linear-gradient(180deg,#ff5b8e,#ff2e6e);padding:4px 10px;border-radius:7px;white-space:nowrap;
+  /* ---- package cards (shown after vehicle picked) ---- */
+  .pkg-list{display:flex;flex-direction:column;gap:12px}
+  .pkg{position:relative;cursor:pointer;border:1px solid var(--line);border-radius:18px;
+    background:var(--card);padding:22px 22px 20px;
+    transition:border-color .18s,box-shadow .2s,transform .2s;
+    box-shadow:0 8px 20px -14px rgba(13,42,120,.15)}
+  .pkg:hover{border-color:var(--blue);transform:translateY(-1px);
+    box-shadow:0 14px 30px -14px rgba(13,42,120,.25)}
+  .pkg .pop{position:absolute;top:-10px;left:22px;font-family:"Archivo";font-style:italic;font-weight:900;
+    font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#fff;
+    background:linear-gradient(180deg,#ff5b8e,#ff2e6e);padding:4px 10px;border-radius:7px;
     box-shadow:0 4px 10px -2px rgba(255,46,110,.55)}
+  .pkg-row{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
+  .pkg-name{font-family:"Archivo";font-style:italic;font-weight:800;font-size:20px;letter-spacing:-.3px;color:var(--ink)}
+  .pkg-price{font-family:"Archivo";font-style:italic;font-weight:900;font-size:24px;color:var(--blue);white-space:nowrap;line-height:1}
+  .pkg-from{font-size:10.5px;color:var(--mut);font-weight:700;text-transform:uppercase;letter-spacing:.06em;text-align:right}
+  .pkg-desc{margin-top:6px;font-size:14px;color:var(--mut);line-height:1.55}
+  .pkg-feat{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px}
+  .pkg-feat span{font-size:11px;font-weight:700;color:var(--blue);background:#e7eeff;padding:4px 10px;border-radius:999px}
 
-  .date-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  .field-label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px}
-  .field-label .req{color:var(--magenta)}
+  /* ---- date + slots ---- */
+  .when-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;
+    box-shadow:0 8px 20px -14px rgba(13,42,120,.15)}
+  .field-label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:8px}
   .field-input{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--field-bg);
-    border:1.5px solid var(--field-line);border-radius:var(--rs);padding:13px 14px;transition:.16s;outline:none;-webkit-appearance:none;appearance:none}
+    border:1.5px solid var(--field-line);border-radius:10px;padding:13px 14px;outline:none;
+    transition:.16s;-webkit-appearance:none;appearance:none}
   .field-input:focus{border-color:var(--field-line-on);box-shadow:0 0 0 3px rgba(54,204,255,.25);background:#fff}
   .field-input.err{border-color:var(--magenta);background:#fff5f8}
   .err-msg{display:none;color:var(--magenta);font-size:12px;font-weight:600;margin-top:5px}
   .err-msg.show{display:block}
-  .row{display:grid;grid-template-columns:1fr;gap:14px}
-  .row.two{grid-template-columns:1fr 1fr}
-
-  .slots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-  .slot{position:relative;cursor:pointer;border:1.5px solid var(--field-line);border-radius:10px;padding:10px 8px;
-    text-align:center;font-weight:700;font-size:13px;color:var(--ink);background:#fff;transition:.16s;user-select:none}
-  .slot input{position:absolute;opacity:0}
-  .slot:hover{border-color:#b9c8ee;background:#fafcff}
+  .slots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:6px}
+  @media(min-width:560px){.slots{grid-template-columns:repeat(4,1fr)}}
+  .slot{position:relative;cursor:pointer;border:1.5px solid var(--field-line);border-radius:10px;padding:11px 8px;
+    text-align:center;font-weight:700;font-size:13.5px;color:var(--ink);background:#fff;
+    transition:.16s;user-select:none}
+  .slot input{position:absolute;opacity:0;pointer-events:none}
+  .slot:hover{border-color:var(--blue);background:#fafcff}
   .slot.on{border-color:var(--blue);background:var(--blue);color:#fff;box-shadow:0 0 0 3px rgba(31,99,255,.18)}
 
+  /* ---- contact form ---- */
+  .form-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;
+    box-shadow:0 8px 20px -14px rgba(13,42,120,.15)}
+  .row{display:grid;grid-template-columns:1fr;gap:14px}
+  .row.two{grid-template-columns:1fr 1fr}
+  @media(max-width:480px){.row.two{grid-template-columns:1fr}}
   .consent{display:flex;gap:9px;align-items:flex-start;background:var(--field-bg);border:1px solid var(--field-line);
-    border-radius:10px;padding:9px 12px;font-size:12px;color:var(--mut);line-height:1.45}
+    border-radius:10px;padding:9px 12px;font-size:12px;color:var(--mut);line-height:1.45;margin-top:18px}
   .consent input{width:17px;height:17px;margin-top:1px;accent-color:var(--blue);flex:none}
   .consent.err{border-color:var(--magenta);background:#fff5f8}
-  .consent-link{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+  .consent-link{color:var(--blue);font-weight:600;text-decoration:underline}
 
-  .nav-row{display:flex;gap:10px;margin-top:18px}
-  .btn-next{flex:1;font-family:"Archivo";font-style:italic;font-weight:900;font-size:17px;letter-spacing:.01em;
-    text-transform:uppercase;color:#fff;cursor:pointer;
-    background:linear-gradient(180deg,#3a78ff,#0d3fd6);border:0;border-radius:13px;padding:16px;
+  /* ---- summary card (always visible after step 2) ---- */
+  .sum-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;
+    margin-bottom:16px;font-size:13px}
+  .sum-card .sr{display:flex;justify-content:space-between;gap:14px;padding:5px 0}
+  .sum-card .sr span{color:var(--mut);font-weight:600}
+  .sum-card .sr b{color:var(--ink);font-weight:700;text-align:right}
+  .sum-card .total{border-top:1px dashed var(--line);margin-top:6px;padding-top:8px}
+  .sum-card .total b{color:var(--blue);font-family:"Archivo";font-style:italic;font-weight:900;font-size:17px}
+
+  /* ---- CTA ---- */
+  .btn{width:100%;margin-top:18px;font-family:"Archivo";font-style:italic;font-weight:900;font-size:18px;
+    letter-spacing:.01em;text-transform:uppercase;color:#fff;cursor:pointer;
+    background:linear-gradient(180deg,#3a78ff,#0d3fd6);border:0;border-radius:13px;padding:17px;
     box-shadow:0 10px 22px -8px rgba(13,63,214,.55);transition:.16s}
-  .btn-next:hover{transform:translateY(-1px);box-shadow:0 14px 26px -8px rgba(13,63,214,.6)}
-  .btn-back{font:inherit;font-size:14px;font-weight:700;color:var(--mut);cursor:pointer;background:transparent;
-    border:1.5px solid var(--field-line);border-radius:13px;padding:14px 22px;transition:.16s}
-  .btn-back:hover{color:var(--ink);border-color:#a8b6dc}
-  .btn{width:100%;margin-top:18px;font-family:"Archivo";font-style:italic;font-weight:900;font-size:19px;letter-spacing:.01em;
-    text-transform:uppercase;color:#fff;cursor:pointer;
-    background:linear-gradient(180deg,#ff5b8e,#ff2e6e);border:0;border-radius:14px;padding:18px;
-    box-shadow:0 10px 22px -6px rgba(255,46,110,.55);transition:.16s}
-  .btn:hover{transform:translateY(-1px);box-shadow:0 14px 26px -6px rgba(255,46,110,.6)}
-
-  .trust-line{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:14px;font-size:12.5px;font-weight:600;color:var(--mut)}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 14px 26px -8px rgba(13,63,214,.6)}
+  .btn.alt{background:linear-gradient(180deg,#ff5b8e,#ff2e6e);box-shadow:0 10px 22px -6px rgba(255,46,110,.55)}
+  .btn.alt:hover{box-shadow:0 14px 26px -6px rgba(255,46,110,.6)}
+  .trust-line{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:14px;
+    font-size:12.5px;font-weight:600;color:var(--mut)}
   .trust-line span{display:inline-flex;align-items:center;gap:6px}
-  .trust-line .ck{width:14px;height:14px;border-radius:50%;background:#dcf3e3;color:var(--good);
-    font-size:10px;font-weight:900;display:grid;place-items:center}
+  .trust-line .ck{width:14px;height:14px;border-radius:50%;background:#dcf3e3;color:var(--good);font-size:10px;font-weight:900;display:grid;place-items:center}
   .fineprint{font-size:11.5px;color:var(--mut);text-align:center;margin-top:14px;line-height:1.6}
 
-  /* success overlay (responsive, always top-anchored) */
+  /* ---- success overlay (same responsive treatment as financing) ---- */
   .ok{position:fixed;inset:0;z-index:100;background:rgba(6,32,143,.65);backdrop-filter:blur(8px);
     display:none;padding:clamp(14px,4vw,28px) clamp(8px,3vw,22px);overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch}
   .ok.on{display:block;animation:fade .25s ease}
@@ -184,7 +198,8 @@
     text-align:center;overflow:hidden;box-shadow:0 30px 70px -16px rgba(0,0,0,.5);animation:pop .4s cubic-bezier(.2,1.2,.3,1)}
   @keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
   @media(min-height:780px){.ok-box{margin-top:clamp(40px,8vh,140px)}}
-  .ok-head{position:relative;padding:clamp(20px,5vw,30px) clamp(18px,4vw,26px);background:linear-gradient(160deg,#1a4cf0,#0a2db0);color:#fff;overflow:hidden}
+  .ok-head{position:relative;padding:clamp(20px,5vw,30px) clamp(18px,4vw,26px);
+    background:linear-gradient(160deg,#1a4cf0,#0a2db0);color:#fff;overflow:hidden}
   .ok-head:before{content:"";position:absolute;inset:0;
     background:url("/assets/bg-bubbles.jpg") repeat;background-size:120% auto;opacity:.55;
     -webkit-mask-image:linear-gradient(to bottom,#000 0,#000 70%,transparent 100%);
@@ -198,251 +213,216 @@
     font-size:clamp(26px,8vw,36px);font-weight:900;line-height:1;
     box-shadow:0 0 0 6px rgba(54,204,255,.22),0 10px 24px -8px rgba(13,63,214,.6)}
   .ok-head h3{font-family:"Archivo";font-style:italic;font-weight:900;font-size:clamp(22px,6vw,30px);letter-spacing:-.02em;line-height:1.1}
-  .ok-head .ok-tag{display:inline-block;background:var(--gold);color:#3a2600;font-weight:800;font-size:clamp(10px,2.8vw,12px);
-    letter-spacing:.08em;padding:5px clamp(9px,2.4vw,12px);border-radius:999px;text-transform:uppercase;margin-top:clamp(8px,2.4vw,12px)}
-  .ok-body{padding:clamp(16px,4vw,24px) clamp(16px,4vw,24px) clamp(14px,3.5vw,20px);text-align:left;color:var(--ink)}
-  .ok-body>p{color:var(--mut);font-size:clamp(13px,3.5vw,14.5px);text-align:center;margin-bottom:clamp(14px,3.5vw,20px);line-height:1.55}
-  .ok-body>p b{color:var(--ink)}
-  .ref-block{margin:clamp(12px,3vw,18px) 0 0;background:#f3f6ff;border:1.5px dashed #b9c8ee;border-radius:12px;padding:clamp(11px,3vw,16px);text-align:center}
+  .ok-head .ok-tag{display:inline-block;background:#ffc21a;color:#3a2600;font-weight:800;
+    font-size:clamp(10px,2.8vw,12px);letter-spacing:.08em;padding:5px clamp(9px,2.4vw,12px);border-radius:999px;
+    text-transform:uppercase;margin-top:clamp(8px,2.4vw,12px)}
+  .ok-body{padding:clamp(16px,4vw,24px);color:var(--ink);text-align:left}
+  .ok-body>p{color:var(--mut);font-size:clamp(13px,3.5vw,14.5px);text-align:center;margin-bottom:clamp(14px,3.5vw,18px);line-height:1.55}
+  .ref-block{margin:clamp(8px,2vw,12px) 0 0;background:#f3f6ff;border:1.5px dashed #b9c8ee;border-radius:12px;
+    padding:clamp(11px,3vw,16px);text-align:center}
   .ref-block .ref-lbl{font-size:clamp(10px,2.6vw,11px);font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-bottom:4px}
-  .ref-code{font-family:"Archivo";font-style:italic;font-weight:900;font-size:clamp(20px,6.2vw,26px);letter-spacing:.04em;color:var(--blue);user-select:all;word-break:break-all}
+  .ref-code{font-family:"Archivo";font-style:italic;font-weight:900;font-size:clamp(20px,6.2vw,26px);
+    letter-spacing:.04em;color:var(--blue);user-select:all;word-break:break-all}
   .booking-block{margin-top:clamp(14px,3.5vw,18px);background:#f3f6ff;border:1px solid #e2e8f3;border-radius:12px;padding:clamp(12px,3vw,16px);font-size:13.5px}
   .booking-block .br{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-top:1px solid #e7eaf1}
   .booking-block .br:first-child{border-top:0;padding-top:0}
   .booking-block .br span{color:var(--mut);font-weight:600}
   .booking-block .br b{color:var(--ink);font-weight:700;text-align:right}
-  .ok-trust{display:flex;justify-content:center;gap:clamp(10px,2.6vw,16px);flex-wrap:wrap;margin-top:clamp(12px,3vw,16px);
-    padding-top:clamp(12px,3vw,16px);border-top:1px solid #eef2fb;font-size:clamp(11px,3vw,12.5px);font-weight:600;color:var(--mut)}
-  .ok-trust span{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
-  .ok-trust .ck{width:14px;height:14px;border-radius:50%;background:#dcf3e3;color:var(--good);font-size:9px;font-weight:900;display:grid;place-items:center}
-
-  /* desktop split — same pattern as financing page */
-  .hero-divider{display:none}
-  @media(min-width:880px){
-    .bg, .bg:before{display:none}
-    body{background:radial-gradient(ellipse 80% 60% at 70% 30%,rgba(54,204,255,.10),transparent 60%),
-      linear-gradient(180deg,#1340de 0%,#0d3fd6 30%,#06208f 70%,#04165d 100%);
-      background-attachment:fixed;padding-left:clamp(440px,38vw,600px)}
-    .shell{max-width:820px;padding:60px 40px 90px;margin:0 auto}
-    .grid{display:block;gap:0}
-    .hero{position:fixed;top:0;left:0;width:clamp(440px,38vw,600px);height:100vh;margin:0;border-radius:0;overflow:visible;
-      display:flex;align-items:center;justify-content:center;
-      background:linear-gradient(160deg,#1a4cf0 0%,#0d3fd6 55%,#06208f 100%);
-      box-shadow:36px 0 90px -28px rgba(0,8,40,.85)}
-    .hero:before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;
-      background:url("/assets/bg-bubbles.jpg") repeat;background-size:640px auto;opacity:.6}
-    .hero:after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
-      background:radial-gradient(ellipse at 50% 30%,rgba(54,204,255,.18),transparent 55%),
-        linear-gradient(180deg,transparent 60%,rgba(6,32,143,.5))}
-    .hero-divider{display:block;position:absolute;top:0;right:-30px;bottom:0;width:60px;z-index:3;pointer-events:none;overflow:visible}
-    .hero-divider svg{width:100%;height:100%;display:block;filter:drop-shadow(0 0 12px rgba(54,204,255,.55)) drop-shadow(0 0 28px rgba(54,204,255,.25))}
-    .hero .hero-inner{padding:0 44px;position:relative;z-index:2;width:100%;max-width:520px}
-    .hero h1 .pct{font-size:clamp(58px,5.2vw,88px)}
-    .row.two{gap:18px}
-    form{padding:34px 38px}
-    .card-head{padding:34px 38px 24px}
-    .veh-grid{grid-template-columns:1fr 1fr 1fr}
-    .slots{grid-template-columns:repeat(4,1fr)}
-  }
-  @media(max-width:420px){.date-row{grid-template-columns:1fr}.slots{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
-<div class="bg"></div>
 
-<div class="shell">
-  <div class="grid">
-
-    <aside class="hero">
-      <span class="hero-divider" aria-hidden="true">
-        <svg viewBox="0 0 60 1000" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="dvg-stroke" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#36ccff" stop-opacity="0"/>
-              <stop offset="12%" stop-color="#36ccff" stop-opacity=".35"/>
-              <stop offset="40%" stop-color="#9fe5ff" stop-opacity=".95"/>
-              <stop offset="60%" stop-color="#9fe5ff" stop-opacity=".95"/>
-              <stop offset="88%" stop-color="#36ccff" stop-opacity=".35"/>
-              <stop offset="100%" stop-color="#36ccff" stop-opacity="0"/>
-            </linearGradient>
-          </defs>
-          <path d="M30 0 C44 180 16 360 30 500 C44 640 16 820 30 1000" stroke="url(#dvg-stroke)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        </svg>
-      </span>
-      <div class="hero-inner">
-        <img class="logo" src="/assets/nebo-logo.png" alt="NEBO UltraWash" width="239" height="114">
-        <h1 class="display">
-          <span class="pct">Book Your Detail</span>
-        </h1>
-        <div class="tagpill"><span>Pick your vehicle. Pick your time.</span></div>
-        <div class="svc-line">
-          <span>Ceramic</span><i></i><span>PPF</span><i></i><span>Wrap</span><i></i><span>Tint</span><i></i><span>Fine Detail</span>
-        </div>
-      </div>
-    </aside>
-
-    <main class="card">
-      <div class="card-head">
-        <span class="head-pill"><span class="dot"></span>~60 seconds to book</span>
-        <h2>Book Your Detailing</h2>
-        <p>Pick your vehicle size, choose a package, and lock in a date and time.</p>
-      </div>
-
-      <form id="bookForm" novalidate>
-        <div class="progress" aria-label="Booking progress">
-          <div class="seg on" data-seg="1"><i></i></div>
-          <div class="seg" data-seg="2"><i></i></div>
-          <div class="seg" data-seg="3"><i></i></div>
-          <div class="seg" data-seg="4"><i></i></div>
-          <div class="lbl">Step <b id="stepCur">1</b>/4</div>
-        </div>
-
-        <!-- STEP 1 — VEHICLE SIZE -->
-        <div class="step on" data-step="1">
-          <div class="step-h">What size is your vehicle?</div>
-          <div class="step-sub">Pricing scales with vehicle size — pick the closest match.</div>
-          <div class="veh-grid">
-            <label class="veh"><input type="radio" name="vehSize" value="Sedan" data-mult="1.0"><span class="chk"></span>
-              <div class="ic"><svg viewBox="0 0 64 42"><path class="fil" d="M6 28 L12 18 L24 14 L42 14 L54 22 L58 28 Z"/><path class="stk" d="M6 28 L12 18 L24 14 L42 14 L54 22 L58 28"/><circle class="stk" cx="18" cy="32" r="4" fill="#fff"/><circle class="stk" cx="46" cy="32" r="4" fill="#fff"/></svg></div>
-              <div class="nm">Sedan</div><div class="ex">Civic, Camry, BMW 3</div></label>
-            <label class="veh"><input type="radio" name="vehSize" value="Hatchback" data-mult="0.95"><span class="chk"></span>
-              <div class="ic"><svg viewBox="0 0 64 42"><path class="fil" d="M6 28 L10 18 L20 14 L40 14 L52 24 L58 28 Z"/><path class="stk" d="M6 28 L10 18 L20 14 L40 14 L52 24 L58 28"/><circle class="stk" cx="18" cy="32" r="4" fill="#fff"/><circle class="stk" cx="46" cy="32" r="4" fill="#fff"/></svg></div>
-              <div class="nm">Hatchback</div><div class="ex">Golf, Civic Hatch</div></label>
-            <label class="veh"><input type="radio" name="vehSize" value="Small SUV" data-mult="1.15"><span class="chk"></span>
-              <div class="ic"><svg viewBox="0 0 64 42"><path class="fil" d="M6 28 L10 16 L22 12 L46 12 L56 22 L58 28 Z"/><path class="stk" d="M6 28 L10 16 L22 12 L46 12 L56 22 L58 28"/><circle class="stk" cx="18" cy="32" r="4" fill="#fff"/><circle class="stk" cx="46" cy="32" r="4" fill="#fff"/></svg></div>
-              <div class="nm">Small SUV</div><div class="ex">RAV4, CR-V, Q3</div></label>
-            <label class="veh"><input type="radio" name="vehSize" value="Truck" data-mult="1.25"><span class="chk"></span>
-              <div class="ic"><svg viewBox="0 0 64 42"><path class="fil" d="M6 28 L10 16 L22 14 L36 14 L36 22 L58 22 L58 28 Z"/><path class="stk" d="M6 28 L10 16 L22 14 L36 14 L36 22 L58 22 L58 28"/><circle class="stk" cx="18" cy="32" r="4" fill="#fff"/><circle class="stk" cx="48" cy="32" r="4" fill="#fff"/></svg></div>
-              <div class="nm">Truck</div><div class="ex">F-150, Silverado</div></label>
-            <label class="veh"><input type="radio" name="vehSize" value="Large SUV / Van" data-mult="1.35"><span class="chk"></span>
-              <div class="ic"><svg viewBox="0 0 64 42"><path class="fil" d="M6 28 L8 14 L22 10 L52 10 L58 18 L60 28 Z"/><path class="stk" d="M6 28 L8 14 L22 10 L52 10 L58 18 L60 28"/><circle class="stk" cx="18" cy="32" r="4" fill="#fff"/><circle class="stk" cx="48" cy="32" r="4" fill="#fff"/></svg></div>
-              <div class="nm">Large SUV / Van</div><div class="ex">Tahoe, Sienna</div></label>
-            <label class="veh"><input type="radio" name="vehSize" value="XL Vehicle" data-mult="1.5"><span class="chk"></span>
-              <div class="ic"><svg viewBox="0 0 64 42"><path class="fil" d="M4 28 L6 12 L22 8 L56 8 L62 18 L62 28 Z"/><path class="stk" d="M4 28 L6 12 L22 8 L56 8 L62 18 L62 28"/><circle class="stk" cx="16" cy="32" r="4" fill="#fff"/><circle class="stk" cx="50" cy="32" r="4" fill="#fff"/></svg></div>
-              <div class="nm">XL Vehicle</div><div class="ex">Suburban, Sprinter</div></label>
-          </div>
-          <div class="err-msg" data-for="vehSize" style="margin-top:10px">Pick a vehicle size</div>
-          <div class="nav-row"><button type="button" class="btn-next" data-next>Continue →</button></div>
-        </div>
-
-        <!-- STEP 2 — PACKAGE -->
-        <div class="step" data-step="2">
-          <div class="step-h">Pick your package</div>
-          <div class="step-sub">Prices update with your vehicle size. Final amount confirmed at drop-off.</div>
-          <div id="pkgGrid">
-            <label class="pkg"><input type="radio" name="package" value="Express Detail" data-base="120">
-              <div class="pkg-head"><div class="pkg-name">Express Detail</div>
-                <div style="text-align:right"><div class="pkg-from">from</div><div class="pkg-price" data-px="120">$120</div></div></div>
-              <div class="pkg-desc">Quick interior + exterior refresh. Vacuum, wipe-down, exterior wash + dry.</div>
-              <div class="pkg-feat"><span>Vacuum</span><span>Wash</span><span>Wipe-down</span><span>~60 min</span></div></label>
-            <label class="pkg on"><input type="radio" name="package" value="Premium Detail" data-base="280" checked>
-              <div class="pop">Most Popular</div>
-              <div class="pkg-head"><div class="pkg-name">Premium Detail</div>
-                <div style="text-align:right"><div class="pkg-from">from</div><div class="pkg-price" data-px="280">$280</div></div></div>
-              <div class="pkg-desc">Full interior + exterior detail. Deep clean, hand wash, clay-bar, wax, tire shine.</div>
-              <div class="pkg-feat"><span>Clay-bar</span><span>Hand wash</span><span>Wax</span><span>Interior shampoo</span><span>~2-3 hr</span></div></label>
-            <label class="pkg"><input type="radio" name="package" value="Complete Detail" data-base="480">
-              <div class="pkg-head"><div class="pkg-name">Complete Detail</div>
-                <div style="text-align:right"><div class="pkg-from">from</div><div class="pkg-price" data-px="480">$480</div></div></div>
-              <div class="pkg-desc">The works. Paint correction, ceramic sealant, deep interior shampoo + steam, leather conditioning.</div>
-              <div class="pkg-feat"><span>Paint correction</span><span>Ceramic sealant</span><span>Steam clean</span><span>Leather care</span><span>~5-6 hr</span></div></label>
-          </div>
-          <div class="err-msg" data-for="package" style="margin-top:10px">Pick a package</div>
-          <div class="nav-row">
-            <button type="button" class="btn-back" data-back>← Back</button>
-            <button type="button" class="btn-next" data-next>Continue →</button>
-          </div>
-        </div>
-
-        <!-- STEP 3 — DATE + TIME -->
-        <div class="step" data-step="3">
-          <div class="step-h">When works for you?</div>
-          <div class="step-sub">Pick a date and an available time slot.</div>
-          <div class="date-row">
-            <div>
-              <label class="field-label" for="bookDate">Date <span class="req">*</span></label>
-              <input class="field-input" type="date" id="bookDate" name="bookDate">
-              <div class="err-msg" data-for="bookDate">Pick a date</div>
-            </div>
-            <div>
-              <label class="field-label">Available slots <span class="req">*</span></label>
-              <div class="slots" role="radiogroup">
-                <label class="slot"><input type="radio" name="slot" value="9:00 AM">9:00 AM</label>
-                <label class="slot"><input type="radio" name="slot" value="10:30 AM">10:30 AM</label>
-                <label class="slot"><input type="radio" name="slot" value="12:00 PM">12:00 PM</label>
-                <label class="slot"><input type="radio" name="slot" value="1:30 PM">1:30 PM</label>
-                <label class="slot"><input type="radio" name="slot" value="3:00 PM">3:00 PM</label>
-                <label class="slot"><input type="radio" name="slot" value="4:30 PM">4:30 PM</label>
-              </div>
-              <div class="err-msg" data-for="slot">Pick a time slot</div>
-            </div>
-          </div>
-          <div class="nav-row">
-            <button type="button" class="btn-back" data-back>← Back</button>
-            <button type="button" class="btn-next" data-next>Continue →</button>
-          </div>
-        </div>
-
-        <!-- STEP 4 — CONTACT -->
-        <div class="step" data-step="4">
-          <div class="step-h">Your details</div>
-          <div class="step-sub">We'll text you a confirmation with your booking reference.</div>
-          <div class="row two">
-            <div>
-              <label class="field-label" for="firstName">First Name <span class="req">*</span></label>
-              <input class="field-input" id="firstName" name="firstName" placeholder="Ahmad" autocomplete="given-name">
-              <div class="err-msg" data-for="firstName">Enter your first name</div>
-            </div>
-            <div>
-              <label class="field-label" for="lastName">Last Name <span class="req">*</span></label>
-              <input class="field-input" id="lastName" name="lastName" placeholder="Khalil" autocomplete="family-name">
-              <div class="err-msg" data-for="lastName">Enter your last name</div>
-            </div>
-          </div>
-          <div class="row two" style="margin-top:14px">
-            <div>
-              <label class="field-label" for="email">Email <span class="req">*</span></label>
-              <input class="field-input" type="email" id="email" name="email" placeholder="you@email.com" autocomplete="email">
-              <div class="err-msg" data-for="email">Enter a valid email</div>
-            </div>
-            <div>
-              <label class="field-label" for="phone">Phone <span class="req">*</span></label>
-              <input class="field-input" type="tel" id="phone" name="phone" placeholder="(519) 555-0142" autocomplete="tel">
-              <div class="err-msg" data-for="phone">Enter your phone number</div>
-            </div>
-          </div>
-          <div class="row" style="margin-top:14px">
-            <div>
-              <label class="field-label" for="notes">Anything else? (optional)</label>
-              <textarea class="field-input" id="notes" name="notes" rows="3" placeholder="Pet hair, stains, specific concerns…"></textarea>
-            </div>
-          </div>
-
-          <label class="consent" id="termsBox" style="margin-top:18px">
-            <input type="checkbox" id="terms" name="terms">
-            <span>I've read and agree to the <a href="#" class="consent-link">Terms</a> &amp; <a href="#" class="consent-link">Privacy Policy</a>.</span>
-          </label>
-          <div class="err-msg" data-for="terms" style="margin-top:6px;margin-left:30px">Please agree to the Terms &amp; Privacy Policy</div>
-
-          <div class="nav-row">
-            <button type="button" class="btn-back" data-back>← Back</button>
-            <button class="btn" type="submit" id="submitBtn" style="flex:1.6;margin-top:0">Confirm My Booking</button>
-          </div>
-          <div class="trust-line">
-            <span><span class="ck">✓</span> No deposit at booking</span>
-            <span><span class="ck">✓</span> Free reschedule</span>
-            <span><span class="ck">✓</span> Confirmation by text + email</span>
-          </div>
-          <div class="fineprint">
-            Final price confirmed at drop-off. Payment due on completion unless using
-            <a href="/" class="consent-link">0% financing</a>.
-          </div>
-        </div>
-
-        <input type="hidden" name="ref" id="refTag" value="">
-      </form>
-    </main>
+<!-- slim top bar -->
+<div class="topbar">
+  <div class="inner">
+    <a class="brand" href="/">
+      <img src="/assets/nebo-logo.png" alt="NEBO">
+      <span class="nm">Detailing<small>NEBO ULTRAWASH</small></span>
+    </a>
+    <div class="tools">
+      <a href="/">0% Financing →</a>
+    </div>
   </div>
+</div>
+
+<div class="wrap">
+
+  <!-- simple hero -->
+  <header class="hero">
+    <span class="eyebrow"><span class="dot"></span>~60 seconds</span>
+    <h1>Book your <em>detailing</em>.</h1>
+    <p>Pick your vehicle, your package, your time. We'll send a confirmation by text and email.</p>
+  </header>
+
+  <!-- STEP 1 — VEHICLE -->
+  <section class="step on" data-step="1">
+    <div class="step-head">
+      <h2>Choose your vehicle</h2>
+      <div class="step-num">Step <b>1</b>/4</div>
+    </div>
+    <div class="veh-grid" id="vehGrid">
+      <div class="veh" data-veh="Sedan" data-mult="1.0">
+        <div class="ic"><svg viewBox="0 0 64 42"><path class="fil" d="M6 28 L12 18 L24 14 L42 14 L54 22 L58 28 Z"/><path class="stk" d="M6 28 L12 18 L24 14 L42 14 L54 22 L58 28"/><circle class="stk" cx="18" cy="32" r="4" fill="#fff"/><circle class="stk" cx="46" cy="32" r="4" fill="#fff"/></svg></div>
+        <div class="nm">Sedan</div><div class="ex">Civic, Camry, BMW 3</div>
+        <div class="from">From <b>$120</b></div>
+        <div class="cta">Book →</div>
+      </div>
+      <div class="veh" data-veh="Hatchback" data-mult="0.95">
+        <div class="ic"><svg viewBox="0 0 64 42"><path class="fil" d="M6 28 L10 18 L20 14 L40 14 L52 24 L58 28 Z"/><path class="stk" d="M6 28 L10 18 L20 14 L40 14 L52 24 L58 28"/><circle class="stk" cx="18" cy="32" r="4" fill="#fff"/><circle class="stk" cx="46" cy="32" r="4" fill="#fff"/></svg></div>
+        <div class="nm">Hatchback</div><div class="ex">Golf, Civic Hatch</div>
+        <div class="from">From <b>$114</b></div>
+        <div class="cta">Book →</div>
+      </div>
+      <div class="veh" data-veh="Small SUV" data-mult="1.15">
+        <div class="ic"><svg viewBox="0 0 64 42"><path class="fil" d="M6 28 L10 16 L22 12 L46 12 L56 22 L58 28 Z"/><path class="stk" d="M6 28 L10 16 L22 12 L46 12 L56 22 L58 28"/><circle class="stk" cx="18" cy="32" r="4" fill="#fff"/><circle class="stk" cx="46" cy="32" r="4" fill="#fff"/></svg></div>
+        <div class="nm">Small SUV</div><div class="ex">RAV4, CR-V, Q3</div>
+        <div class="from">From <b>$138</b></div>
+        <div class="cta">Book →</div>
+      </div>
+      <div class="veh" data-veh="Truck" data-mult="1.25">
+        <div class="ic"><svg viewBox="0 0 64 42"><path class="fil" d="M6 28 L10 16 L22 14 L36 14 L36 22 L58 22 L58 28 Z"/><path class="stk" d="M6 28 L10 16 L22 14 L36 14 L36 22 L58 22 L58 28"/><circle class="stk" cx="18" cy="32" r="4" fill="#fff"/><circle class="stk" cx="48" cy="32" r="4" fill="#fff"/></svg></div>
+        <div class="nm">Truck</div><div class="ex">F-150, Silverado</div>
+        <div class="from">From <b>$150</b></div>
+        <div class="cta">Book →</div>
+      </div>
+      <div class="veh" data-veh="Large SUV / Van" data-mult="1.35">
+        <div class="ic"><svg viewBox="0 0 64 42"><path class="fil" d="M6 28 L8 14 L22 10 L52 10 L58 18 L60 28 Z"/><path class="stk" d="M6 28 L8 14 L22 10 L52 10 L58 18 L60 28"/><circle class="stk" cx="18" cy="32" r="4" fill="#fff"/><circle class="stk" cx="48" cy="32" r="4" fill="#fff"/></svg></div>
+        <div class="nm">Large SUV / Van</div><div class="ex">Tahoe, Sienna</div>
+        <div class="from">From <b>$162</b></div>
+        <div class="cta">Book →</div>
+      </div>
+      <div class="veh" data-veh="XL Vehicle" data-mult="1.5">
+        <div class="ic"><svg viewBox="0 0 64 42"><path class="fil" d="M4 28 L6 12 L22 8 L56 8 L62 18 L62 28 Z"/><path class="stk" d="M4 28 L6 12 L22 8 L56 8 L62 18 L62 28"/><circle class="stk" cx="16" cy="32" r="4" fill="#fff"/><circle class="stk" cx="50" cy="32" r="4" fill="#fff"/></svg></div>
+        <div class="nm">XL Vehicle</div><div class="ex">Suburban, Sprinter</div>
+        <div class="from">From <b>$180</b></div>
+        <div class="cta">Book →</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 2 — PACKAGE -->
+  <section class="step" data-step="2">
+    <button class="change" data-goto="1">← Change vehicle (<span id="chgVeh">—</span>)</button>
+    <div class="step-head">
+      <h2>Choose your package</h2>
+      <div class="step-num">Step <b>2</b>/4</div>
+    </div>
+    <div class="pkg-list" id="pkgList">
+      <div class="pkg" data-pkg="Express Detail" data-base="120">
+        <div class="pkg-row">
+          <div><div class="pkg-name">Express Detail</div>
+            <div class="pkg-desc">Quick interior + exterior refresh. Vacuum, wipe-down, exterior wash + dry. About 60 minutes.</div></div>
+          <div><div class="pkg-from">FROM</div><div class="pkg-price" data-base="120">$120</div></div>
+        </div>
+        <div class="pkg-feat"><span>Vacuum</span><span>Hand wash</span><span>Tire shine</span><span>~60 min</span></div>
+      </div>
+      <div class="pkg" data-pkg="Premium Detail" data-base="280">
+        <div class="pop">Most Popular</div>
+        <div class="pkg-row">
+          <div><div class="pkg-name">Premium Detail</div>
+            <div class="pkg-desc">Full interior + exterior detail. Deep clean, clay-bar, wax, interior shampoo. 2–3 hours.</div></div>
+          <div><div class="pkg-from">FROM</div><div class="pkg-price" data-base="280">$280</div></div>
+        </div>
+        <div class="pkg-feat"><span>Clay-bar</span><span>Wax</span><span>Interior shampoo</span><span>Leather wipe</span><span>~2–3 hr</span></div>
+      </div>
+      <div class="pkg" data-pkg="Complete Detail" data-base="480">
+        <div class="pkg-row">
+          <div><div class="pkg-name">Complete Detail</div>
+            <div class="pkg-desc">The works. Paint correction, ceramic sealant, steam clean, leather conditioning. 5–6 hours.</div></div>
+          <div><div class="pkg-from">FROM</div><div class="pkg-price" data-base="480">$480</div></div>
+        </div>
+        <div class="pkg-feat"><span>Paint correction</span><span>Ceramic sealant</span><span>Steam clean</span><span>Leather care</span><span>~5–6 hr</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 3 — DATE + TIME -->
+  <section class="step" data-step="3">
+    <button class="change" data-goto="2">← Change package (<span id="chgPkg">—</span>)</button>
+
+    <div class="sum-card">
+      <div class="sr"><span>Vehicle</span><b id="sumVeh">—</b></div>
+      <div class="sr"><span>Package</span><b id="sumPkg">—</b></div>
+      <div class="sr total"><span>Estimated price</span><b id="sumPrice">—</b></div>
+    </div>
+
+    <div class="step-head">
+      <h2>Pick a time</h2>
+      <div class="step-num">Step <b>3</b>/4</div>
+    </div>
+    <div class="when-card">
+      <label class="field-label" for="bookDate">Date</label>
+      <input class="field-input" type="date" id="bookDate" name="bookDate">
+      <div class="err-msg" data-for="bookDate">Pick a date</div>
+
+      <label class="field-label" style="margin-top:16px">Available slots</label>
+      <div class="slots" id="slotGrid" role="radiogroup">
+        <label class="slot"><input type="radio" name="slot" value="9:00 AM">9:00 AM</label>
+        <label class="slot"><input type="radio" name="slot" value="10:30 AM">10:30 AM</label>
+        <label class="slot"><input type="radio" name="slot" value="12:00 PM">12:00 PM</label>
+        <label class="slot"><input type="radio" name="slot" value="1:30 PM">1:30 PM</label>
+        <label class="slot"><input type="radio" name="slot" value="3:00 PM">3:00 PM</label>
+        <label class="slot"><input type="radio" name="slot" value="4:30 PM">4:30 PM</label>
+      </div>
+      <div class="err-msg" data-for="slot" style="margin-top:8px">Pick a time slot</div>
+
+      <button type="button" class="btn" id="toStep4">Continue →</button>
+    </div>
+  </section>
+
+  <!-- STEP 4 — CONTACT + CONFIRM -->
+  <section class="step" data-step="4">
+    <button class="change" data-goto="3">← Change time (<span id="chgTime">—</span>)</button>
+
+    <div class="sum-card">
+      <div class="sr"><span>Vehicle</span><b id="sumVeh2">—</b></div>
+      <div class="sr"><span>Package</span><b id="sumPkg2">—</b></div>
+      <div class="sr"><span>When</span><b id="sumWhen">—</b></div>
+      <div class="sr total"><span>Estimated price</span><b id="sumPrice2">—</b></div>
+    </div>
+
+    <div class="step-head">
+      <h2>Your details</h2>
+      <div class="step-num">Step <b>4</b>/4</div>
+    </div>
+    <form id="bookForm" class="form-card" novalidate>
+      <div class="row two">
+        <div><label class="field-label" for="firstName">First name</label>
+          <input class="field-input" id="firstName" name="firstName" placeholder="Ahmad" autocomplete="given-name">
+          <div class="err-msg" data-for="firstName">Enter your first name</div></div>
+        <div><label class="field-label" for="lastName">Last name</label>
+          <input class="field-input" id="lastName" name="lastName" placeholder="Khalil" autocomplete="family-name">
+          <div class="err-msg" data-for="lastName">Enter your last name</div></div>
+      </div>
+      <div class="row two" style="margin-top:14px">
+        <div><label class="field-label" for="email">Email</label>
+          <input class="field-input" type="email" id="email" name="email" placeholder="you@email.com" autocomplete="email">
+          <div class="err-msg" data-for="email">Enter a valid email</div></div>
+        <div><label class="field-label" for="phone">Phone</label>
+          <input class="field-input" type="tel" id="phone" name="phone" placeholder="(519) 555-0142" autocomplete="tel">
+          <div class="err-msg" data-for="phone">Enter your phone number</div></div>
+      </div>
+      <div class="row" style="margin-top:14px">
+        <div><label class="field-label" for="notes">Anything else? (optional)</label>
+          <textarea class="field-input" id="notes" name="notes" rows="3" placeholder="Pet hair, stains, specific concerns…"></textarea></div>
+      </div>
+
+      <label class="consent" id="termsBox">
+        <input type="checkbox" id="terms" name="terms">
+        <span>I've read and agree to the <a href="#" class="consent-link">Terms</a> &amp; <a href="#" class="consent-link">Privacy Policy</a>.</span>
+      </label>
+      <div class="err-msg" data-for="terms" style="margin-top:6px;margin-left:30px">Please agree to the Terms &amp; Privacy Policy</div>
+
+      <button type="submit" class="btn alt">Confirm My Booking</button>
+      <div class="trust-line">
+        <span><span class="ck">✓</span> No deposit at booking</span>
+        <span><span class="ck">✓</span> Free reschedule</span>
+        <span><span class="ck">✓</span> Confirmation by text + email</span>
+      </div>
+      <div class="fineprint">Final price confirmed at drop-off. Payment due on completion unless using <a href="/" class="consent-link">0% financing</a>.</div>
+    </form>
+  </section>
+
 </div>
 
 <!-- success overlay -->
@@ -455,21 +435,13 @@
       <span class="ok-tag">See you soon</span>
     </div>
     <div class="ok-body">
-      <p>Your detailing appointment is locked in. We'll text and email you a confirmation with all the details.</p>
-      <div class="ref-block">
-        <div class="ref-lbl">Booking Reference</div>
-        <div class="ref-code" id="refCode">NEBO-XXXXXX</div>
-      </div>
+      <p>Your detailing appointment is locked in. We'll text and email you a confirmation.</p>
+      <div class="ref-block"><div class="ref-lbl">Booking Reference</div><div class="ref-code" id="refCode">NEBO-XXXXXX</div></div>
       <div class="booking-block">
         <div class="br"><span>Vehicle</span><b id="okVeh">—</b></div>
         <div class="br"><span>Package</span><b id="okPkg">—</b></div>
         <div class="br"><span>When</span><b id="okWhen">—</b></div>
         <div class="br"><span>Estimated price</span><b id="okPrice">—</b></div>
-      </div>
-      <div class="ok-trust">
-        <span><span class="ck">✓</span>Confirmed</span>
-        <span><span class="ck">✓</span>Reminder sent</span>
-        <span><span class="ck">✓</span>No deposit</span>
       </div>
     </div>
   </div>
@@ -477,64 +449,104 @@
 
 <script>
 const SUBMIT={DEMO:true,ENDPOINT:"/api/booking"};
-const form=document.getElementById('bookForm');
-const btn=document.getElementById('submitBtn');
-
-/* source tag */
-(function(){
-  const q=new URLSearchParams(location.search);
-  const ref=q.get('ref')||q.get('utm_source')||'';
-  if(ref) document.getElementById('refTag').value=ref.slice(0,40);
-})();
+const state={veh:null,vehMult:1,pkg:null,pkgBase:0,price:0,date:'',slot:''};
 
 function fmt(n){return '$'+Math.round(n).toLocaleString();}
-function updatePrices(){
-  const veh=document.querySelector('input[name="vehSize"]:checked');
-  const mult=veh?(+veh.dataset.mult||1):1;
-  document.querySelectorAll('.pkg input[name="package"]').forEach(r=>{
-    const base=+r.dataset.base||0;
-    const px=r.closest('.pkg').querySelector('.pkg-price');
-    const total=Math.round(base*mult);
-    px.textContent=fmt(total);
-    px.dataset.px=String(total);
+
+function go(step){
+  document.querySelectorAll('.step').forEach(s=>s.classList.toggle('on',+s.dataset.step===step));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* update package prices based on vehicle multiplier */
+function updatePkgPrices(){
+  document.querySelectorAll('.pkg-price').forEach(el=>{
+    const base=+el.dataset.base||0;
+    el.textContent=fmt(base*state.vehMult);
   });
 }
 
-document.querySelectorAll('.veh input').forEach(r=>{
-  r.addEventListener('change',()=>{
-    document.querySelectorAll('.veh').forEach(v=>v.classList.remove('on'));
-    r.closest('.veh').classList.add('on');
-    showErr('vehSize',false);
-    updatePrices();
+/* fill summary blocks */
+function fillSummary(){
+  document.getElementById('chgVeh').textContent=state.veh||'';
+  document.getElementById('chgPkg').textContent=state.pkg||'';
+  document.getElementById('sumVeh').textContent=state.veh||'—';
+  document.getElementById('sumPkg').textContent=state.pkg||'—';
+  document.getElementById('sumPrice').textContent=state.price?fmt(state.price)+' (est.)':'—';
+  document.getElementById('sumVeh2').textContent=state.veh||'—';
+  document.getElementById('sumPkg2').textContent=state.pkg||'—';
+  const w=state.date?(new Date(state.date+'T00:00:00').toLocaleDateString('en-CA',{weekday:'short',month:'short',day:'numeric'})):'';
+  const whenLbl=(w+' · '+(state.slot||'')).trim().replace(/^· /,'');
+  document.getElementById('sumWhen').textContent=whenLbl||'—';
+  document.getElementById('sumPrice2').textContent=state.price?fmt(state.price)+' (est.)':'—';
+  document.getElementById('chgTime').textContent=whenLbl||'';
+}
+
+/* vehicle click — picks + advances */
+document.querySelectorAll('.veh').forEach(v=>{
+  v.addEventListener('click',()=>{
+    state.veh=v.dataset.veh;
+    state.vehMult=+v.dataset.mult||1;
+    updatePkgPrices(); fillSummary();
+    go(2);
   });
 });
-document.querySelectorAll('.pkg input').forEach(r=>{
-  r.addEventListener('change',()=>{
-    document.querySelectorAll('.pkg').forEach(p=>p.classList.remove('on'));
-    r.closest('.pkg').classList.add('on');
-    showErr('package',false);
+
+/* package click — picks + advances */
+document.querySelectorAll('.pkg').forEach(p=>{
+  p.addEventListener('click',()=>{
+    state.pkg=p.dataset.pkg;
+    state.pkgBase=+p.dataset.base||0;
+    state.price=Math.round(state.pkgBase*state.vehMult);
+    fillSummary();
+    go(3);
   });
 });
+
+/* change links */
+document.querySelectorAll('.change').forEach(b=>b.addEventListener('click',()=>go(+b.dataset.goto)));
+
+/* slots */
 document.querySelectorAll('.slot input').forEach(r=>{
   r.addEventListener('change',()=>{
     document.querySelectorAll('.slot').forEach(s=>s.classList.remove('on'));
     r.closest('.slot').classList.add('on');
+    state.slot=r.value;
     showErr('slot',false);
+    fillSummary();
   });
 });
+document.getElementById('bookDate').addEventListener('change',e=>{
+  state.date=e.target.value;
+  showErr('bookDate',false);
+  fillSummary();
+});
 
+/* min date today */
+(function(){const dt=document.getElementById('bookDate');const t=new Date();t.setHours(0,0,0,0);dt.min=t.toISOString().split('T')[0];})();
+
+/* step 3 → 4 */
+document.getElementById('toStep4').addEventListener('click',()=>{
+  let ok=true;
+  if(!state.date){showErr('bookDate',true);ok=false;}
+  if(!state.slot){showErr('slot',true);ok=false;}
+  if(!ok) return;
+  go(4);
+});
+
+/* phone format */
 const phone=document.getElementById('phone');
 phone.addEventListener('input',()=>{
   let d=phone.value.replace(/\D/g,'').slice(0,10);
   phone.value=d.length>6?`(${d.slice(0,3)}) ${d.slice(3,6)}-${d.slice(6)}`
     :d.length>3?`(${d.slice(0,3)}) ${d.slice(3)}`:d;
 });
-(function(){const dt=document.getElementById('bookDate');const t=new Date();t.setHours(0,0,0,0);dt.min=t.toISOString().split('T')[0];})();
 
-function showErr(key,on){
-  const m=document.querySelector('.err-msg[data-for="'+key+'"]');
+function showErr(k,on){
+  const m=document.querySelector('.err-msg[data-for="'+k+'"]');
   if(m) m.classList.toggle('show',on);
-  const f=document.getElementById(key); if(f) f.classList.toggle('err',on);
+  const f=document.getElementById(k);
+  if(f) f.classList.toggle('err',on);
 }
 function vf(k){
   const f=document.getElementById(k); if(!f) return true;
@@ -544,59 +556,42 @@ function vf(k){
   showErr(k,bad); return !bad;
 }
 
-const RULES={
-  1:()=>{const ok=!!document.querySelector('input[name="vehSize"]:checked');showErr('vehSize',!ok);return ok;},
-  2:()=>{const ok=!!document.querySelector('input[name="package"]:checked');showErr('package',!ok);return ok;},
-  3:()=>{let ok=vf('bookDate');const s=document.querySelector('input[name="slot"]:checked');showErr('slot',!s);if(!s)ok=false;return ok;},
-  4:()=>{let ok=['firstName','lastName','email','phone'].map(vf).every(Boolean);
-    const c=document.getElementById('terms'),b=document.getElementById('termsBox');
-    showErr('terms',!c.checked);b.classList.toggle('err',!c.checked);if(!c.checked) ok=false;return ok;}
-};
-
-let cur=1;
-function goStep(n){
-  document.querySelectorAll('.step').forEach(s=>s.classList.toggle('on',+s.dataset.step===n));
-  document.querySelectorAll('.progress .seg').forEach(s=>s.classList.toggle('on',+s.dataset.seg<=n));
-  document.getElementById('stepCur').textContent=n;
-  cur=n;
-  document.querySelector('.card').scrollIntoView({behavior:'smooth',block:'start'});
-}
-document.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>{
-  if(!RULES[cur]()){const f=document.querySelector('.step.on .err-msg.show');if(f)f.scrollIntoView({behavior:'smooth',block:'center'});return;}
-  goStep(cur+1);
-}));
-document.querySelectorAll('[data-back]').forEach(b=>b.addEventListener('click',()=>goStep(cur-1)));
-
 function genRef(){
   const a='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';let s='';
-  for(let i=0;i<6;i++) s+=a[Math.floor(Math.random()*a.length)];
+  for(let i=0;i<6;i++)s+=a[Math.floor(Math.random()*a.length)];
   return 'NEBO-'+s;
 }
 
-form.addEventListener('submit',async e=>{
+document.getElementById('bookForm').addEventListener('submit',async e=>{
   e.preventDefault();
-  if(!RULES[4]()){const f=document.querySelector('.step.on .err-msg.show');if(f)f.scrollIntoView({behavior:'smooth',block:'center'});return;}
-  const orig=btn.textContent; btn.disabled=true; btn.textContent='Confirming…';
-  const data=Object.fromEntries(new FormData(form).entries());
-  data.submittedAt=new Date().toISOString();
-  const pxEl=document.querySelector('input[name="package"]:checked')?.closest('.pkg')?.querySelector('.pkg-price');
-  data.priceEst=pxEl?'$'+(+pxEl.dataset.px).toLocaleString():'';
-  data.referenceCode=genRef();
+  let ok=['firstName','lastName','email','phone'].map(vf).every(Boolean);
+  const c=document.getElementById('terms'),b=document.getElementById('termsBox');
+  showErr('terms',!c.checked);b.classList.toggle('err',!c.checked);
+  if(!c.checked) ok=false;
+  if(!ok){const first=document.querySelector('.step.on .err-msg.show');if(first) first.scrollIntoView({behavior:'smooth',block:'center'});return;}
+  const btn=e.target.querySelector('button[type="submit"]');
+  btn.disabled=true; btn.textContent='Confirming…';
+  const data={
+    ...Object.fromEntries(new FormData(e.target).entries()),
+    vehicle:state.veh, vehMult:state.vehMult, package:state.pkg, packageBase:state.pkgBase,
+    estPrice:state.price, date:state.date, slot:state.slot,
+    referenceCode:genRef(), submittedAt:new Date().toISOString()
+  };
   try{
     if(!SUBMIT.DEMO){const r=await fetch(SUBMIT.ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});if(!r.ok) throw 0;}
-    else{console.log('[DEMO] booking',data); await new Promise(r=>setTimeout(r,800));}
+    else{console.log('[DEMO] booking',data);await new Promise(r=>setTimeout(r,700));}
     document.getElementById('refCode').textContent=data.referenceCode;
-    document.getElementById('okVeh').textContent=data.vehSize||'—';
-    document.getElementById('okPkg').textContent=data.package||'—';
-    const dt=data.bookDate?new Date(data.bookDate+'T00:00:00').toLocaleDateString('en-CA',{weekday:'short',month:'short',day:'numeric'}):'';
-    document.getElementById('okWhen').textContent=(dt+' · '+(data.slot||'')).trim();
-    document.getElementById('okPrice').textContent=data.priceEst+' (est.)';
-    const ov=document.getElementById('okOverlay'); ov.classList.add('on');
+    document.getElementById('okVeh').textContent=state.veh||'—';
+    document.getElementById('okPkg').textContent=state.pkg||'—';
+    const w=state.date?new Date(state.date+'T00:00:00').toLocaleDateString('en-CA',{weekday:'short',month:'short',day:'numeric'}):'';
+    document.getElementById('okWhen').textContent=(w+' · '+state.slot).trim();
+    document.getElementById('okPrice').textContent=fmt(state.price)+' (est.)';
+    const ov=document.getElementById('okOverlay');ov.classList.add('on');
     requestAnimationFrame(()=>ov.scrollTop=0);
-  }catch(err){btn.disabled=false;btn.textContent=orig;alert('Something went wrong. Please try again.');}
+  }catch(err){btn.disabled=false;btn.textContent='Confirm My Booking';alert('Something went wrong. Please try again.');}
 });
 
-updatePrices();
+updatePkgPrices();
 </script>
 </body>
 </html>
