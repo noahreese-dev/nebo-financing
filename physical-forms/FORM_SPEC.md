@@ -38,12 +38,18 @@ User-input fields (blank lines):
 - Email
 
 ### 2 — Vehicle Information
-*Subtitle:* "So we can confirm pricing accurately at drop-off."
+*Subtitle:* "VEHICLE INFORMATION — So we can quote accurately."
 
-User-input fields (blank):
-- Year + Make + Model
-- VIN
-- Colour + Plate
+Refinement (2026-05-20, post-variant-I): the previous "Year + Make + Model" combo on a single line crowded the input area with bracket guidance. New layout — terse labels, fields on individual short lines or compact two-ups, no inline bracket guidance:
+
+```
+Year  ____________      Make  ____________
+Model ________________________
+VIN   ________________________
+Colour ___________      Plate _____________
+```
+
+Helper text (if any) sits BELOW the label in small italic gray, max 5 words. Never on the same line as the input.
 
 ### 3 — Services Requested
 *Subtitle:* "Check what you'd like financed. You can combine multiple."
