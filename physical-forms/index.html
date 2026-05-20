@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Physical Form Mockups — NEBO UltraWash</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Archivo:ital,wght@0,700;0,800;1,800;1,900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#0d3fd6;--cyan:#36ccff;--gold:#ffc21a;
+    --ink:#0a1530;--mut:#8b97a4;--dim:#5d6873;
+    --bg:#0a0c10;--panel:#11161d;--line:#222a34;--hair:#1a2029;
+    --txt:#e9eef4;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Inter",system-ui,sans-serif;background:var(--bg);color:var(--txt);
+    line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:var(--blue);text-decoration:none}
+
+  .topbar{position:sticky;top:0;z-index:50;background:rgba(10,12,16,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--hair)}
+  .topbar .inner{max-width:1180px;margin:0 auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .topbar .brand{font-family:"Archivo";font-style:italic;font-weight:900;font-size:15px;letter-spacing:-.2px;display:flex;align-items:center;gap:9px}
+  .topbar .brand .dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 4px rgba(54,204,255,.18)}
+  .topbar .nav a{font-size:13px;font-weight:600;color:var(--mut);margin-left:14px}
+  .topbar .nav a:hover{color:var(--txt)}
+
+  .hero{padding:48px 22px 30px;max-width:1180px;margin:0 auto}
+  .eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;color:var(--cyan);
+    background:rgba(54,204,255,.10);border:1px solid rgba(54,204,255,.25);padding:5px 12px;border-radius:999px;
+    letter-spacing:.16em;text-transform:uppercase}
+  .hero h1{font-family:"Archivo";font-style:italic;font-weight:900;font-size:clamp(28px,4vw,42px);
+    letter-spacing:-.6px;line-height:1.1;margin:18px 0 10px}
+  .hero p{color:var(--mut);max-width:65ch;font-size:15px;line-height:1.6}
+
+  .grid{max-width:1180px;margin:0 auto;padding:18px 18px 60px;display:grid;
+    grid-template-columns:1fr;gap:24px}
+  @media(min-width:880px){.grid{grid-template-columns:1fr 1fr;gap:30px}}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;
+    box-shadow:0 20px 50px -20px rgba(0,0,0,.6)}
+  .card .label{padding:16px 20px 12px;border-bottom:1px solid var(--hair);display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap}
+  .card .label h3{font-family:"Archivo";font-style:italic;font-weight:800;font-size:18px;letter-spacing:-.2px}
+  .card .label .tag{font-size:10.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--cyan);background:rgba(54,204,255,.10);border:1px solid rgba(54,204,255,.25);padding:3px 9px;border-radius:6px}
+  .card .label .note{display:block;width:100%;font-size:12.5px;color:var(--mut);margin-top:4px;line-height:1.5}
+  .shot{display:block;cursor:zoom-in;position:relative;background:#000}
+  .shot img{display:block;width:100%;height:auto}
+  .shot .zoom{position:absolute;bottom:10px;right:12px;font-size:11px;font-weight:700;color:var(--cyan);
+    background:rgba(10,12,16,.7);padding:4px 9px;border-radius:6px;letter-spacing:.06em;text-transform:uppercase}
+
+  /* lightbox */
+  .lb{position:fixed;inset:0;z-index:100;background:rgba(5,7,10,.94);backdrop-filter:blur(6px);
+    display:none;align-items:flex-start;justify-content:center;padding:24px;overflow:auto;cursor:zoom-out}
+  .lb.on{display:flex}
+  .lb img{max-width:1400px;width:100%;height:auto;border-radius:10px;border:1px solid var(--line);
+    box-shadow:0 30px 80px -20px rgba(0,0,0,.9)}
+  .lb .x{position:fixed;top:18px;right:24px;font-size:24px;color:var(--mut);cursor:pointer;line-height:1}
+  .lb .x:hover{color:#fff}
+  .lb .cap{position:fixed;top:22px;left:24px;font-size:13px;font-weight:600;color:var(--mut)}
+
+  footer{max-width:1180px;margin:0 auto;padding:40px 22px;color:var(--dim);font-size:12.5px;border-top:1px solid var(--hair)}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="inner">
+    <span class="brand"><span class="dot"></span>NEBO · Physical Form Mockups</span>
+    <nav class="nav"><a href="/">/financing</a><a href="/detailing">/detailing</a></nav>
+  </div>
+</div>
+
+<header class="hero">
+  <span class="eyebrow">Internal · pick a direction</span>
+  <h1>0% Financing — physical paper form, 5 directions.</h1>
+  <p>Same content (customer info → vehicle → services → plan → terms → signature), five visual layouts. Pick the one you want as the print master. Click any thumbnail to view full size.</p>
+</header>
+
+<div class="grid">
+
+  <div class="card">
+    <div class="label">
+      <h3>A · Classic two-column</h3><span class="tag">Conservative</span>
+      <span class="note">Two-column traditional legal-document feel. Cobalt only as section underlines. Tidy field lines. Safe, professional, won't surprise anyone.</span>
+    </div>
+    <a class="shot" data-cap="Variant A · Classic two-column" href="/assets/physical-forms/classic.jpg">
+      <img src="/assets/physical-forms/classic.jpg" alt="Classic two-column variant">
+      <span class="zoom">⤢ zoom</span>
+    </a>
+  </div>
+
+  <div class="card">
+    <div class="label">
+      <h3>B · Branded header band</h3><span class="tag">On-brand</span>
+      <span class="note">Bold cobalt band across the top with the NEBO logo and the application title in heavy italic. Strongest brand presence — feels like the digital form's print cousin.</span>
+    </div>
+    <a class="shot" data-cap="Variant B · Branded header band" href="/assets/physical-forms/branded-header.jpg">
+      <img src="/assets/physical-forms/branded-header.jpg" alt="Branded header variant">
+      <span class="zoom">⤢ zoom</span>
+    </a>
+  </div>
+
+  <div class="card">
+    <div class="label">
+      <h3>C · Visual checkbox grid</h3><span class="tag">Selection-first</span>
+      <span class="note">Services laid out as a 2×2 visual checkbox grid (matching the digital form's service cards). Easier for the customer to scan and pick at the counter.</span>
+    </div>
+    <a class="shot" data-cap="Variant C · Visual checkbox grid" href="/assets/physical-forms/checkbox-grid.jpg">
+      <img src="/assets/physical-forms/checkbox-grid.jpg" alt="Checkbox grid variant">
+      <span class="zoom">⤢ zoom</span>
+    </a>
+  </div>
+
+  <div class="card">
+    <div class="label">
+      <h3>D · Modern minimal</h3><span class="tag">Apple/Stripe</span>
+      <span class="note">Lots of whitespace, thin cobalt rules between sections, uppercase letterspaced labels. Premium, restrained — the design-forward direction.</span>
+    </div>
+    <a class="shot" data-cap="Variant D · Modern minimal" href="/assets/physical-forms/modern-minimal.jpg">
+      <img src="/assets/physical-forms/modern-minimal.jpg" alt="Modern minimal variant">
+      <span class="zoom">⤢ zoom</span>
+    </a>
+  </div>
+
+  <div class="card">
+    <div class="label">
+      <h3>E · Tear-off ticket stub</h3><span class="tag">Memorable</span>
+      <span class="note">Perforated bottom stub the customer keeps with their reference code — print mirror of the digital "you're approved" reference card. Tactile + functional.</span>
+    </div>
+    <a class="shot" data-cap="Variant E · Tear-off ticket stub" href="/assets/physical-forms/ticket-style.jpg">
+      <img src="/assets/physical-forms/ticket-style.jpg" alt="Ticket-style variant">
+      <span class="zoom">⤢ zoom</span>
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  <p>5 directions generated via Gemini 2.5 Flash Image. Each is a starting concept — once you pick a direction we refine the typography, field structure, and any details that didn't render quite right in the AI mockup. Final master will be a print-ready PDF.</p>
+  <p style="margin-top:10px">Generated 2026-05-20. Tell me a letter (A/B/C/D/E) and I'll lock that direction + start the print master.</p>
+</footer>
+
+<div class="lb" id="lb">
+  <span class="cap" id="lbCap"></span>
+  <span class="x">✕</span>
+  <img id="lbImg" src="" alt="">
+</div>
+
+<script>
+  var lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),lbCap=document.getElementById('lbCap');
+  document.querySelectorAll('.shot').forEach(function(s){
+    s.addEventListener('click',function(e){e.preventDefault();lbImg.src=s.getAttribute('href');lbCap.textContent=s.dataset.cap;lb.classList.add('on');});
+  });
+  function closeLb(){lb.classList.remove('on');lbImg.src='';}
+  lb.addEventListener('click',closeLb);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLb();});
+</script>
+</body>
+</html>
