@@ -1,0 +1,11 @@
+# vercel
+.vercel
+# OS
+.DS_Store
+Thumbs.db
+# temp / QA artifacts
+_*.png
+_*.mjs
+*.tmp
+# internal-only assets (don't publish)
+assets/whatsapp-thread.jpg

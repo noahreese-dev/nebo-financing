@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hero Iterations — NEBO Financing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Archivo:ital,wght@0,700;0,800;1,800;1,900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#0d3fd6; --blue-deep:#06208f; --blue-bright:#1f63ff;
+    --cyan:#36ccff; --gold:#ffc21a; --magenta:#ff2e6e;
+    --ink:#0a1530; --mut:#8b97a4;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Inter",system-ui,sans-serif;background:#0a0c10;color:#e9eef4;line-height:1.5;
+    -webkit-font-smoothing:antialiased}
+  .top{padding:32px 22px 14px;max-width:1100px;margin:0 auto}
+  .top h1{font-family:"Archivo";font-style:italic;font-weight:800;font-size:24px;letter-spacing:-.3px}
+  .top p{color:var(--mut);margin-top:6px;font-size:14px;max-width:60ch}
+  .grid{max-width:1100px;margin:0 auto;padding:8px 14px 60px;display:grid;
+    grid-template-columns:repeat(2,1fr);gap:22px}
+  @media(max-width:880px){.grid{grid-template-columns:1fr}}
+  .card{background:#11161f;border:1px solid #232a34;border-radius:18px;overflow:hidden;
+    box-shadow:0 18px 40px -16px rgba(0,0,0,.55)}
+  .card .label{padding:14px 18px 10px;border-bottom:1px solid #1c232d;display:flex;
+    align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  .card .label h3{font-size:14px;font-weight:700;letter-spacing:.02em}
+  .card .label .tag{font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--cyan);background:rgba(54,204,255,.10);border:1px solid rgba(54,204,255,.25);
+    padding:3px 8px;border-radius:6px}
+  .card .label .note{display:block;width:100%;font-size:12px;color:var(--mut);margin-top:2px}
+
+  /* === shared hero structure inside each iteration === */
+  .hero{position:relative;color:#fff;overflow:hidden;border-radius:0;padding:24px 22px 22px;text-align:left}
+  .hero .display{font-family:"Archivo";font-style:italic;font-weight:900;letter-spacing:-.02em;line-height:.92}
+  .hero .pct{font-size:clamp(58px,15vw,110px);display:block;color:#fff;
+    text-shadow:
+      0 1px 0 #bcd2ff,0 2px 0 #6f93f0,0 3px 0 #3f6ae0,0 4px 0 #2b53d2,
+      0 6px 0 #1f43c0,0 8px 0 #163399,0 11px 0 #102a80,0 14px 0 #0a1f66,
+      0 16px 24px rgba(2,10,46,.55),0 0 38px rgba(54,204,255,.55)}
+  .hero .fin{font-size:clamp(32px,8.4vw,56px);display:block;color:#fff;margin-top:2px;
+    text-shadow:
+      0 1px 0 #bcd2ff,0 2px 0 #5f84ec,0 3px 0 #2f59d4,0 5px 0 #1d40bb,
+      0 7px 0 #14318f,0 9px 0 #0d2470,0 12px 18px rgba(2,10,46,.5),
+      0 0 26px rgba(54,204,255,.5)}
+  .tagpill{display:inline-block;background:var(--gold);color:#3a2600;font-weight:800;font-size:12.5px;
+    letter-spacing:.04em;padding:8px 14px;border-radius:999px;transform:skew(-7deg);margin-top:12px;
+    text-transform:uppercase}
+  .tagpill span{display:inline-block;transform:skew(7deg)}
+  .trust{display:flex;gap:9px;margin-top:18px}
+  .trust>div{flex:1;text-align:center;padding:13px 6px 11px;border-radius:13px;
+    background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.03));
+    box-shadow:0 1px 0 rgba(255,255,255,.14) inset,0 0 0 1px rgba(120,200,255,.22),
+      0 12px 22px -14px rgba(0,8,40,.7)}
+  .trust .t{font-family:"Archivo";font-style:italic;font-weight:900;font-size:19px;color:#fff;line-height:1}
+  .trust .s{display:block;font-size:9.5px;color:var(--cyan);font-weight:800;
+    letter-spacing:.16em;text-transform:uppercase;margin-top:6px}
+
+  /* === Iteration A: current (cobalt gradient + glass chips) === */
+  .heroA{background:linear-gradient(160deg,#1a4cf0,#0a2db0)}
+  .heroA:after{content:"";position:absolute;inset:0;
+    background-image:radial-gradient(circle,rgba(255,255,255,.07) 0 12px,transparent 13px);
+    background-size:74px 74px;opacity:.6;pointer-events:none}
+  .heroA .logo{position:relative;height:60px;width:auto;display:block;
+    filter:drop-shadow(0 2px 6px rgba(0,8,40,.5)) drop-shadow(0 0 14px rgba(54,204,255,.28))}
+  .heroA .inner{position:relative;z-index:2}
+  .heroA .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+  .heroA .chips b{background:rgba(255,255,255,.08);color:#d6e6ff;font-weight:700;font-size:10.5px;
+    letter-spacing:.14em;text-transform:uppercase;padding:5px 10px;border-radius:6px;
+    border:1px solid rgba(120,200,255,.22);font-style:normal}
+
+  /* === Iteration B: brand bubbly bg + chips + bigger logo === */
+  .heroB{background:url("assets/bg-bubbles.jpg") repeat,linear-gradient(160deg,#1a4cf0,#0a2db0);
+    background-size:100% auto,cover}
+  .heroB .inner{position:relative;z-index:2}
+  .heroB .logo{position:relative;height:76px;width:auto;display:block;
+    filter:drop-shadow(0 3px 8px rgba(0,8,40,.55))}
+  .heroB .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+  .heroB .chips b{background:rgba(255,255,255,.10);color:#dbe6ff;font-weight:700;font-size:10.5px;
+    letter-spacing:.14em;text-transform:uppercase;padding:5px 10px;border-radius:6px;
+    border:1px solid rgba(180,220,255,.32);font-style:normal;backdrop-filter:blur(4px)}
+
+  /* === Iteration C: bubbly bg + text-only service list (no chip boxes at all) === */
+  .heroC{background:url("assets/bg-bubbles.jpg") repeat,linear-gradient(160deg,#1a4cf0,#0a2db0);
+    background-size:100% auto,cover}
+  .heroC .inner{position:relative;z-index:2}
+  .heroC .logo{position:relative;height:72px;width:auto;display:block;
+    filter:drop-shadow(0 3px 8px rgba(0,8,40,.55))}
+  .heroC .svc-line{margin-top:16px;font-family:"Archivo";font-style:italic;font-weight:800;font-size:11.5px;
+    letter-spacing:.14em;text-transform:uppercase;color:rgba(220,235,255,.85)}
+  .heroC .svc-line span{display:inline-block;margin:0 2px}
+  .heroC .svc-line i{display:inline-block;width:5px;height:5px;border-radius:50%;
+    background:var(--cyan);vertical-align:middle;margin:0 9px 3px;opacity:.7}
+
+  /* === Iteration D: bubbly bg + huge logo, gold pill prominent, ultra-clean === */
+  .heroD{background:url("assets/bg-bubbles.jpg") repeat,linear-gradient(160deg,#1a4cf0,#0a2db0);
+    background-size:100% auto,cover;text-align:center}
+  .heroD .inner{position:relative;z-index:2}
+  .heroD .logo{position:relative;height:88px;width:auto;margin:0 auto 8px;
+    filter:drop-shadow(0 3px 8px rgba(0,8,40,.55))}
+  .heroD .display{display:flex;flex-direction:column;align-items:center}
+  .heroD .tagpill{margin:14px auto 0}
+  .heroD .svc-line{margin-top:16px;font-family:"Archivo";font-style:italic;font-weight:800;font-size:11px;
+    letter-spacing:.16em;text-transform:uppercase;color:rgba(220,235,255,.85)}
+  .heroD .svc-line i{display:inline-block;width:4px;height:4px;border-radius:50%;
+    background:var(--cyan);vertical-align:middle;margin:0 8px 3px;opacity:.7}
+  .heroD .trust{margin-top:20px}
+
+  footer{padding:22px 22px 50px;max-width:1100px;margin:0 auto;color:var(--mut);font-size:12px;text-align:center}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <h1>NEBO Financing — Hero Iterations</h1>
+  <p>Four variations of the same hero/top section. Same copy, same content, four different visual treatments. Pick the one to ship and I'll roll it into the live form.</p>
+</div>
+
+<div class="grid">
+
+  <!-- A: current shipped state -->
+  <div class="card">
+    <div class="label">
+      <h3>A · Current (shipped)</h3>
+      <span class="tag">Live now</span>
+      <span class="note">Cobalt gradient with sparse dot texture · standard logo size · glass chip tags · trust glass tiles</span>
+    </div>
+    <div class="hero heroA">
+      <div class="inner">
+        <img class="logo" src="assets/nebo-logo.png" alt="NEBO UltraWash">
+        <h2 class="display" style="margin-top:14px">
+          <span class="pct">0%</span>
+          <span class="fin">FINANCING</span>
+        </h2>
+        <div class="tagpill"><span>Upgrade your ride. Pay over time.</span></div>
+        <div class="chips"><b>Ceramic Coating</b><b>PPF</b><b>Vinyl Wrap</b><b>Window Tinting</b></div>
+        <div class="trust">
+          <div><div class="t">Fast</div><div class="s">Approval</div></div>
+          <div><div class="t">Easy</div><div class="s">Payments</div></div>
+          <div><div class="t">0%</div><div class="s">Interest</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B: bubbly bg + bigger logo, same chips -->
+  <div class="card">
+    <div class="label">
+      <h3>B · Bubbly background + bigger logo</h3>
+      <span class="tag">Closest to poster</span>
+      <span class="note">Real brand bubbly bg from the poster · bigger logo · slightly cleaner chips with backdrop blur</span>
+    </div>
+    <div class="hero heroB">
+      <div class="inner">
+        <img class="logo" src="assets/nebo-logo.png" alt="NEBO UltraWash">
+        <h2 class="display" style="margin-top:14px">
+          <span class="pct">0%</span>
+          <span class="fin">FINANCING</span>
+        </h2>
+        <div class="tagpill"><span>Upgrade your ride. Pay over time.</span></div>
+        <div class="chips"><b>Ceramic Coating</b><b>PPF</b><b>Vinyl Wrap</b><b>Window Tinting</b></div>
+        <div class="trust">
+          <div><div class="t">Fast</div><div class="s">Approval</div></div>
+          <div><div class="t">Easy</div><div class="s">Payments</div></div>
+          <div><div class="t">0%</div><div class="s">Interest</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C: bubbly bg + text-only service list (no chip boxes) -->
+  <div class="card">
+    <div class="label">
+      <h3>C · Bubbly bg + text-only services</h3>
+      <span class="tag">Cleanest</span>
+      <span class="note">No chip boxes — services listed inline as italic uppercase text with cyan separator dots. Removes any "button-like" feel entirely.</span>
+    </div>
+    <div class="hero heroC">
+      <div class="inner">
+        <img class="logo" src="assets/nebo-logo.png" alt="NEBO UltraWash">
+        <h2 class="display" style="margin-top:14px">
+          <span class="pct">0%</span>
+          <span class="fin">FINANCING</span>
+        </h2>
+        <div class="tagpill"><span>Upgrade your ride. Pay over time.</span></div>
+        <div class="svc-line">
+          <span>Ceramic Coating</span><i></i><span>PPF</span><i></i><span>Vinyl Wrap</span><i></i><span>Window Tinting</span>
+        </div>
+        <div class="trust">
+          <div><div class="t">Fast</div><div class="s">Approval</div></div>
+          <div><div class="t">Easy</div><div class="s">Payments</div></div>
+          <div><div class="t">0%</div><div class="s">Interest</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- D: centered, huge logo, minimal chrome — matches poster vibe most directly -->
+  <div class="card">
+    <div class="label">
+      <h3>D · Centered · poster-faithful</h3>
+      <span class="tag">Most poster-like</span>
+      <span class="note">Center-aligned · huge logo at the top · gold pill prominent · text-only service line · trust tiles below. Mirrors the actual NEBO marketing poster layout.</span>
+    </div>
+    <div class="hero heroD">
+      <div class="inner">
+        <img class="logo" src="assets/nebo-logo.png" alt="NEBO UltraWash">
+        <h2 class="display">
+          <span class="pct">0%</span>
+          <span class="fin">FINANCING</span>
+        </h2>
+        <div class="tagpill"><span>Upgrade your ride. Pay over time.</span></div>
+        <div class="svc-line">
+          <span>Ceramic Coating</span><i></i><span>PPF</span><i></i><span>Vinyl Wrap</span><i></i><span>Window Tinting</span>
+        </div>
+        <div class="trust">
+          <div><div class="t">Fast</div><div class="s">Approval</div></div>
+          <div><div class="t">Easy</div><div class="s">Payments</div></div>
+          <div><div class="t">0%</div><div class="s">Interest</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  NEBO UltraWash · hero design iterations · 2026-05-19<br>
+  Tell me which letter (A / B / C / D) and I'll roll it into the live form at <code>nebo-financing-form.vercel.app</code>.
+</footer>
+
+</body>
+</html>

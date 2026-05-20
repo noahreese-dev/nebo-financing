@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>0% Financing — NEBO UltraWash</title>
+<meta name="description" content="Finance your Ceramic Coating, PPF, Vinyl Wrap or Window Tint with 0% interest at NEBO UltraWash. Upgrade your ride, pay over time. Fast approval, easy monthly payments, no interest.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#0d3fd6">
+<link rel="canonical" href="https://nebo-financing-form.vercel.app/">
+<!-- Open Graph / social -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NEBO UltraWash">
+<meta property="og:title" content="0% Financing — NEBO UltraWash">
+<meta property="og:description" content="Finance Ceramic Coating, PPF, Vinyl Wrap or Window Tint with 0% interest. Upgrade your ride, pay over time. Fast approval, no interest.">
+<meta property="og:image" content="https://nebo-financing-form.vercel.app/assets/nebo-financing-banner.jpg">
+<meta property="og:url" content="https://nebo-financing-form.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="0% Financing — NEBO UltraWash">
+<meta name="twitter:description" content="Ceramic Coating, PPF, Vinyl Wrap, Window Tint — 0% interest, pay over time.">
+<meta name="twitter:image" content="https://nebo-financing-form.vercel.app/assets/nebo-financing-banner.jpg">
+<!-- Structured data: machine-readable for search + AI answer engines -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutomotiveBusiness",
+  "name": "NEBO UltraWash",
+  "url": "https://nebo-financing-form.vercel.app/",
+  "logo": "https://nebo-financing-form.vercel.app/assets/nebo-logo.png",
+  "image": "https://nebo-financing-form.vercel.app/assets/nebo-financing-banner.jpg",
+  "description": "Premium auto detailing offering Ceramic Coating, Paint Protection Film (PPF), Vinyl Wrap and Window Tinting with 0% interest financing.",
+  "makesOffer": {
+    "@type": "Offer",
+    "name": "0% Financing",
+    "description": "0% interest financing on detailing services. Pay over time with easy monthly payments, fast approval, no interest when paid on the agreed schedule.",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "description": "0% interest, equal monthly payments over 3, 6 or 12 months on approved application."
+    },
+    "itemOffered": [
+      { "@type": "Service", "name": "Ceramic Coating", "description": "Long-term paint protection and gloss." },
+      { "@type": "Service", "name": "Paint Protection Film (PPF)", "description": "Self-healing protective film for vehicle paint." },
+      { "@type": "Service", "name": "Vinyl Wrap", "description": "Full or partial vehicle colour change." },
+      { "@type": "Service", "name": "Window Tinting", "description": "Heat and UV rejection window film." }
+    ]
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Archivo:ital,wght@0,600;0,700;0,800;1,800;1,900&display=swap" rel="stylesheet">
+<style>
+  /* ============ NEBO UltraWash brand system ============ */
+  :root{
+    --blue:#0d3fd6; --blue-deep:#06208f; --blue-bright:#1f63ff;
+    --cyan:#36ccff; --cyan-soft:rgba(54,204,255,.5);
+    --gold:#ffc21a; --magenta:#ff2e6e;
+    --ink:#0a1530; --white:#ffffff;
+    --field-bg:#f3f6ff; --field-line:#cfd9f5; --field-line-on:#1f63ff;
+    --txt:#0a1530; --mut:#5d6b8f; --good:#16a34a;
+    --r:16px; --rs:12px;
+    --shadow:0 10px 30px -8px rgba(6,32,143,.35);
+    --glow:0 0 0 3px rgba(54,204,255,.25),0 8px 24px -6px rgba(13,63,214,.45);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:"Inter",system-ui,sans-serif;color:var(--txt);
+    background:#06208f;
+    -webkit-font-smoothing:antialiased;line-height:1.55;
+  }
+  img{max-width:100%;display:block}
+  .display{font-family:"Archivo",system-ui,sans-serif;font-style:italic;font-weight:900;letter-spacing:-.02em;line-height:.92}
+
+  /* Bubble texture lives at the TOP of the page only and SCROLLS with content.
+     Body's solid cobalt covers everything below. */
+  .bg{position:absolute;top:0;left:0;right:0;height:480px;z-index:-1;pointer-events:none;
+    background:linear-gradient(180deg,#1340de 0%,#0d3fd6 60%,#06208f 100%)}
+  .bg:before{content:"";position:absolute;inset:0;
+    background:url("assets/bg-bubbles.jpg") repeat;background-size:120% auto;opacity:.85;
+    -webkit-mask-image:linear-gradient(to bottom,#000 0,#000 180px,transparent 380px);
+    mask-image:linear-gradient(to bottom,#000 0,#000 180px,transparent 380px)}
+  @media(min-width:880px){
+    .bg{height:700px}
+    .bg:before{
+      -webkit-mask-image:linear-gradient(to bottom,#000 0,#000 260px,transparent 540px);
+      mask-image:linear-gradient(to bottom,#000 0,#000 260px,transparent 540px)}
+  }
+
+  /* layout */
+  .shell{max-width:1180px;margin:0 auto;padding:18px 16px 60px}
+  .grid{display:grid;grid-template-columns:1fr;gap:18px}
+
+  /* ---- hero panel ---- */
+  .hero{
+    position:relative;border-radius:var(--r);overflow:hidden;
+    background:transparent;
+    color:#fff;text-align:center;
+  }
+  .hero .hero-inner{padding:30px 22px 26px;position:relative;z-index:2}
+  .logo{height:88px;width:auto;display:block;margin:0 auto 4px;
+    /* Stacked cobalt drop-shadows create a soft halo that dampens bubble bleed-through
+       around the logo's antialiased edges, then a fine cyan glow on top */
+    filter:
+      drop-shadow(0 0 28px rgba(6,32,143,.95))
+      drop-shadow(0 0 14px rgba(6,32,143,.85))
+      drop-shadow(0 3px 8px rgba(0,8,40,.55))
+      drop-shadow(0 0 18px rgba(54,204,255,.28))}
+  @media(max-width:520px){.logo{height:76px}}
+  .hero h1{margin:18px 0 4px}
+  .hero h1 .pct{font-size:clamp(72px,21vw,132px);display:block;color:#fff;
+    text-shadow:
+      0 1px 0 #bcd2ff,0 2px 0 #6f93f0,0 3px 0 #3f6ae0,0 4px 0 #2b53d2,
+      0 6px 0 #1f43c0,0 8px 0 #163399,0 10px 0 #102a80,0 13px 0 #0a1f66,
+      0 16px 24px rgba(2,10,46,.55),0 0 38px rgba(54,204,255,.55)}
+  .hero h1 .fin{font-size:clamp(38px,10.5vw,66px);display:block;color:#fff;margin-top:2px;
+    text-shadow:
+      0 1px 0 #bcd2ff,0 2px 0 #5f84ec,0 3px 0 #2f59d4,0 5px 0 #1d40bb,
+      0 7px 0 #14318f,0 9px 0 #0d2470,0 12px 18px rgba(2,10,46,.5),
+      0 0 26px rgba(54,204,255,.5)}
+  .tagpill{display:inline-block;background:var(--gold);color:#3a2600;
+    font-weight:800;font-size:13px;letter-spacing:.04em;padding:8px 16px;border-radius:999px;
+    transform:skew(-7deg);margin-top:12px;text-transform:uppercase}
+  .tagpill span{display:inline-block;transform:skew(7deg)}
+  /* services as a clean text line — no chips, no button feel */
+  .svc-line{margin-top:18px;font-family:"Archivo";font-style:italic;font-weight:800;
+    font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(220,235,255,.88);
+    line-height:1.7}
+  .svc-line span{display:inline-block}
+  .svc-line i{display:inline-block;width:5px;height:5px;border-radius:50%;
+    background:var(--cyan);vertical-align:middle;margin:0 9px 3px;opacity:.75}
+  .trust{display:flex;gap:10px;margin-top:22px}
+  .trust>div{flex:1;text-align:center;padding:15px 8px 13px;border-radius:14px;
+    background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.03));
+    box-shadow:0 1px 0 rgba(255,255,255,.14) inset,0 0 0 1px rgba(120,200,255,.22),
+      0 12px 22px -14px rgba(0,8,40,.7)}
+  .trust .t{font-family:"Archivo";font-style:italic;font-weight:900;font-size:21px;color:#fff;line-height:1}
+  .trust .s{display:block;font-size:10px;color:var(--cyan);font-weight:800;
+    letter-spacing:.16em;text-transform:uppercase;margin-top:7px}
+
+  /* ---- form card ---- */
+  .card{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+  .card-head{padding:24px 22px 18px;background:linear-gradient(180deg,#f5f8ff,#fff);border-bottom:1px solid #eef2fb}
+  .card-head h2{font-family:"Archivo";font-style:italic;font-weight:800;font-size:24px;color:var(--ink);letter-spacing:-.02em}
+  .card-head p{color:var(--mut);font-size:14px;margin-top:5px}
+  form{padding:22px}
+  .sec{margin-bottom:26px}
+  .sec:last-of-type{margin-bottom:14px}
+  .sec-title{display:flex;align-items:center;gap:10px;font-family:"Archivo";font-style:italic;
+    font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:.06em;color:var(--blue);margin-bottom:14px}
+  .sec-title .n{display:grid;place-items:center;width:24px;height:24px;border-radius:7px;
+    background:var(--blue);color:#fff;font-size:12px;font-weight:800;font-style:normal}
+
+  .row{display:grid;grid-template-columns:1fr;gap:14px}
+  .row.two{grid-template-columns:1fr 1fr}
+  .row.three{grid-template-columns:1fr 1fr 1fr}
+  .field-label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px}
+  .field-label .req{color:var(--magenta)}
+  .field-input{
+    width:100%;font:inherit;font-size:16px;color:var(--ink);
+    background:var(--field-bg);border:1.5px solid var(--field-line);
+    border-radius:var(--rs);padding:13px 14px;transition:.16s;outline:none;-webkit-appearance:none;appearance:none
+  }
+  select.field-input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%235d6b8f' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
+  .field-input:focus{border-color:var(--field-line-on);box-shadow:var(--glow);background:#fff}
+  .field-input::placeholder{color:#9aa6c5}
+  .field-input.err{border-color:var(--magenta);background:#fff5f8}
+  .err-msg{display:none;color:var(--magenta);font-size:12px;font-weight:600;margin-top:5px}
+  .err-msg.show{display:block}
+
+  /* service selector cards */
+  .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  /* selectable service tile — clearly NOT a CTA button */
+  .svc{position:relative;cursor:pointer;border:1.5px solid #e2e8f3;border-radius:14px;
+    padding:18px 16px 16px;text-align:center;user-select:none;background:#fff;
+    transition:border-color .18s,background .18s,box-shadow .18s}
+  .svc:hover{border-color:#b9c8ee;background:#fafcff}
+  .svc input{position:absolute;opacity:0;pointer-events:none}
+  /* persistent checkbox affordance — empty circle, becomes filled on select */
+  .svc .chk{position:absolute;top:12px;right:12px;width:22px;height:22px;border-radius:50%;
+    border:2px solid #c6d0e3;background:#fff;transition:.18s;display:grid;place-items:center}
+  .svc .chk:after{content:"";width:7px;height:11px;border:solid #fff;border-width:0 2.5px 2.5px 0;
+    transform:rotate(45deg) scale(0);opacity:0;margin-top:-2px;transition:.18s}
+  .svc.on{border-color:var(--blue);background:#f3f6ff;
+    box-shadow:0 0 0 3px rgba(31,99,255,.18)}
+  .svc.on .chk{border-color:var(--blue);background:var(--blue)}
+  .svc.on .chk:after{transform:rotate(45deg) scale(1);opacity:1}
+  /* approved NEBO service badge — transparent PNG, rests directly in the tile */
+  .svc .badge{display:block;width:100%;max-width:260px;height:74px;margin:8px auto 14px;
+    object-fit:contain;object-position:center}
+  .svc .nm{font-family:"Archivo";font-style:italic;font-weight:800;font-size:15px;color:var(--ink);text-transform:uppercase;letter-spacing:.01em}
+  .svc .ds{font-size:11.5px;color:var(--mut);margin-top:3px}
+
+  /* plan radio cards */
+  .plan-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+  .plan{cursor:pointer;border:1.5px solid var(--field-line);border-radius:var(--rs);
+    padding:14px 8px;text-align:center;background:var(--field-bg);transition:.16s}
+  .plan input{position:absolute;opacity:0}
+  .plan .big{font-family:"Archivo";font-style:italic;font-weight:900;font-size:22px;color:var(--ink)}
+  .plan .lbl{font-size:11px;color:var(--mut);font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-top:2px}
+  .plan.on{border-color:var(--blue);background:#eaf0ff;box-shadow:var(--glow)}
+  .plan.on .big{color:var(--blue)}
+
+  /* consent + submit */
+  .consent{display:flex;gap:11px;align-items:flex-start;background:var(--field-bg);
+    border:1.5px solid var(--field-line);border-radius:var(--rs);padding:14px;font-size:13px;color:var(--mut)}
+  .consent input{width:20px;height:20px;margin-top:1px;accent-color:var(--blue);flex:none}
+  .consent.err{border-color:var(--magenta);background:#fff5f8}
+  .consent-stack{display:flex;flex-direction:column;gap:10px}
+  .consent-stack .err-msg{margin-top:-4px;margin-left:34px}
+  .consent-link{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+  .btn{
+    width:100%;margin-top:18px;font-family:"Archivo";font-style:italic;font-weight:900;
+    font-size:19px;letter-spacing:.01em;text-transform:uppercase;color:#fff;cursor:pointer;
+    background:linear-gradient(180deg,#ff5b8e,#ff2e6e);border:0;border-radius:14px;padding:18px;
+    box-shadow:0 10px 22px -6px rgba(255,46,110,.55);transition:.16s
+  }
+  .btn:hover{transform:translateY(-1px);box-shadow:0 14px 26px -6px rgba(255,46,110,.6)}
+  .btn:active{transform:translateY(0)}
+  .btn[disabled]{opacity:.7;cursor:wait}
+  .fineprint{font-size:11.5px;color:var(--mut);text-align:center;margin-top:14px;line-height:1.6}
+
+  /* ---- 3-step flow ---- */
+  .head-pill{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;font-weight:800;
+    color:var(--blue);background:#e7eeff;border-radius:999px;padding:5px 12px;letter-spacing:.04em;
+    text-transform:uppercase;margin-bottom:10px}
+  .head-pill .dot{width:6px;height:6px;border-radius:50%;background:var(--good);
+    box-shadow:0 0 0 3px rgba(22,163,74,.18);animation:pulse 1.8s ease-in-out infinite}
+  @keyframes pulse{50%{box-shadow:0 0 0 6px rgba(22,163,74,0)}}
+
+  .progress{display:flex;gap:8px;margin:0 0 20px;align-items:center}
+  .progress .seg{flex:1;height:6px;border-radius:99px;background:#eaeef9;overflow:hidden;position:relative}
+  .progress .seg i{position:absolute;inset:0;background:linear-gradient(90deg,#1f63ff,#36ccff);
+    transform:translateX(-100%);transition:transform .45s cubic-bezier(.2,.85,.25,1)}
+  .progress .seg.on i{transform:translateX(0)}
+  .progress .lbl{font-size:12px;font-weight:700;color:var(--mut);white-space:nowrap;letter-spacing:.02em}
+  .progress .lbl b{color:var(--blue)}
+
+  .step{display:none;animation:stepIn .35s cubic-bezier(.2,.85,.25,1)}
+  .step.on{display:block}
+  @keyframes stepIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .step-h{font-family:"Archivo";font-style:italic;font-weight:800;font-size:20px;color:var(--ink);
+    letter-spacing:-.01em;margin-bottom:4px}
+  .step-sub{color:var(--mut);font-size:13.5px;margin-bottom:18px}
+
+  /* monthly estimate tag on service card */
+  .svc .mo{margin-top:7px;display:inline-block;font-size:11.5px;font-weight:800;color:var(--blue);
+    background:#e7eeff;border-radius:7px;padding:3px 8px;letter-spacing:.02em}
+  .svc.on .mo{background:#fff;color:var(--blue)}
+
+  /* Most Popular badge on plan card */
+  .plan{position:relative;overflow:visible}
+  .plan .pop{position:absolute;top:-10px;left:50%;transform:translateX(-50%);
+    font-family:"Archivo";font-style:italic;font-weight:900;font-size:10px;letter-spacing:.1em;
+    text-transform:uppercase;color:#fff;background:linear-gradient(180deg,#ff5b8e,#ff2e6e);
+    padding:4px 10px;border-radius:7px;white-space:nowrap;
+    box-shadow:0 4px 10px -2px rgba(255,46,110,.55)}
+  .plan .save{display:block;font-size:11px;color:var(--mut);font-weight:700;margin-top:4px;letter-spacing:.02em}
+
+  /* step navigation */
+  .nav-row{display:flex;gap:10px;margin-top:18px}
+  .btn-next{flex:1;font-family:"Archivo";font-style:italic;font-weight:900;font-size:17px;
+    letter-spacing:.01em;text-transform:uppercase;color:#fff;cursor:pointer;
+    background:linear-gradient(180deg,#3a78ff,#0d3fd6);border:0;border-radius:13px;padding:16px;
+    box-shadow:0 10px 22px -8px rgba(13,63,214,.55);transition:.16s}
+  .btn-next:hover{transform:translateY(-1px);box-shadow:0 14px 26px -8px rgba(13,63,214,.6)}
+  .btn-back{font:inherit;font-size:14px;font-weight:700;color:var(--mut);cursor:pointer;
+    background:transparent;border:1.5px solid var(--field-line);border-radius:13px;padding:14px 22px;transition:.16s}
+  .btn-back:hover{color:var(--ink);border-color:#a8b6dc}
+
+  /* trust microcopy under CTA */
+  .trust-line{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;
+    margin-top:14px;font-size:12.5px;font-weight:600;color:var(--mut)}
+  .trust-line span{display:inline-flex;align-items:center;gap:6px}
+  .trust-line .ck{width:14px;height:14px;border-radius:50%;background:#dcf3e3;color:var(--good);
+    font-size:10px;font-weight:900;display:grid;place-items:center}
+
+  /* fine print disclaimer for estimates */
+  .est-note{font-size:11px;color:var(--mut);margin-top:10px;text-align:center;font-style:italic}
+
+  /* ---- cinematic entrance loader ---- */
+  .loader{position:fixed;inset:0;z-index:200;display:grid;place-items:center;overflow:hidden;
+    background:
+      radial-gradient(120% 90% at 50% 30%,#1a4fe6 0%,#0c34b8 34%,#061c72 66%,#030f44 86%,#020a30 100%);
+    transition:transform .8s cubic-bezier(.7,0,.18,1),visibility .8s}
+  /* slow studio-light bloom behind everything */
+  .loader:before{content:"";position:absolute;width:140vmax;height:140vmax;
+    background:conic-gradient(from 0deg,transparent 0 18%,rgba(120,180,255,.10) 26%,transparent 34% 70%,rgba(120,180,255,.07) 80%,transparent 88%);
+    animation:studio 7s linear infinite;opacity:.8}
+  @keyframes studio{to{transform:rotate(360deg)}}
+  /* premium hairline frame draws in */
+  .l-frame{position:absolute;inset:18px;border-radius:18px;
+    border:1px solid rgba(150,200,255,.16);opacity:0;
+    animation:frameIn .9s ease-out .15s forwards}
+  @keyframes frameIn{0%{opacity:0;transform:scale(1.02)}100%{opacity:1;transform:scale(1)}}
+  /* specular light-rake across a glossy panel (the car cue) */
+  .l-sheen{position:absolute;top:-20%;bottom:-20%;left:-40%;width:32%;
+    background:linear-gradient(100deg,transparent,rgba(190,225,255,.16) 36%,rgba(255,255,255,.5) 50%,rgba(190,225,255,.16) 64%,transparent);
+    transform:skewX(-14deg);filter:blur(3px);opacity:0;
+    animation:rake 1.55s cubic-bezier(.5,0,.2,1) .35s forwards}
+  @keyframes rake{0%{left:-40%;opacity:0}22%{opacity:1}78%{opacity:1}100%{left:135%;opacity:0}}
+  /* glossy squeegee wipe-away */
+  .loader.done{transform:translateY(-101%);visibility:hidden}
+  .loader.done:after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:14px;
+    background:linear-gradient(180deg,rgba(190,240,255,.0),rgba(190,240,255,.55) 55%,#eafaff 78%,rgba(190,240,255,.2));
+    box-shadow:0 0 40px 10px rgba(120,225,255,.9),0 0 90px 30px rgba(54,150,255,.4);filter:blur(.4px)}
+
+  /* radial strike flash */
+  .l-flash{position:absolute;width:60vmax;height:60vmax;border-radius:50%;
+    background:radial-gradient(circle,rgba(190,240,255,.55),rgba(54,204,255,.12) 35%,transparent 62%);
+    opacity:0;animation:lflash 1.25s ease-out forwards}
+  @keyframes lflash{0%{opacity:0;transform:scale(.2)}12%{opacity:1}45%{opacity:.35}100%{opacity:0;transform:scale(1.15)}}
+  /* shockwave rings */
+  .l-ring{position:absolute;width:80px;height:80px;border-radius:50%;
+    border:2px solid rgba(150,225,255,.8);opacity:0;animation:lring 1.5s cubic-bezier(.2,.7,.3,1) forwards}
+  .l-ring.r2{animation-delay:.16s;border-color:rgba(255,255,255,.55)}
+  @keyframes lring{0%{opacity:0;transform:scale(.3)}14%{opacity:.9}100%{opacity:0;transform:scale(7)}}
+
+  .loader-core{position:relative;text-align:center;z-index:2}
+  .l-mark{position:relative;display:block;margin:0 auto;width:fit-content;line-height:0}
+  .l-logo{width:clamp(220px,52vw,320px);height:auto;display:block;margin:0 auto;transform-origin:center;
+    filter:drop-shadow(0 0 18px rgba(54,204,255,.5));
+    animation:strike 1.2s cubic-bezier(.16,1,.3,1) forwards}
+  @keyframes strike{
+    0%{opacity:0;transform:scale(1.9) rotate(-5deg);filter:drop-shadow(0 0 0 #fff) blur(9px)}
+    24%{opacity:1;filter:drop-shadow(0 0 36px #fff) blur(0)}
+    44%{transform:scale(.965) rotate(1deg)}
+    66%{transform:scale(1.025) rotate(-.5deg);filter:drop-shadow(0 0 28px rgba(120,225,255,.95))}
+    100%{transform:scale(1) rotate(0);filter:drop-shadow(0 0 16px rgba(54,204,255,.55))}}
+  /* ceramic-shine glint sweeping the real logo */
+  .l-mark:before{content:"";position:absolute;top:-12%;bottom:-12%;left:-35%;width:36%;z-index:2;
+    background:linear-gradient(105deg,transparent,rgba(255,255,255,.85),transparent);
+    transform:skewX(-18deg);opacity:0;pointer-events:none;
+    animation:glint 1s ease-in-out .72s forwards;mix-blend-mode:overlay}
+  @keyframes glint{0%{left:-35%;opacity:0}30%{opacity:1}70%{opacity:1}100%{left:125%;opacity:0}}
+
+  /* staggered reveal */
+  .reveal{opacity:0;transform:translateY(26px) scale(.992);
+    transition:opacity .65s ease,transform .7s cubic-bezier(.2,.85,.25,1)}
+  body.in .reveal{opacity:1;transform:none}
+  body.in .hero{transition-delay:.04s}
+  body.in .card{transition-delay:.14s}
+
+  @media(prefers-reduced-motion:reduce){
+    .loader{display:none}
+    .reveal{opacity:1;transform:none;transition:none}
+    .loader:before,.l-frame,.l-sheen,.l-logo,.l-flash,.l-ring,.l-mark:before{animation:none;opacity:1}
+  }
+
+  /* ---- premium-branded confirmation overlay ---- */
+  .ok{position:fixed;inset:0;z-index:100;background:rgba(6,32,143,.65);backdrop-filter:blur(8px);
+    display:none;align-items:center;justify-content:center;padding:18px;overflow:auto}
+  .ok.on{display:flex;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  .ok-box{background:#fff;border-radius:22px;max-width:440px;width:100%;
+    text-align:center;overflow:hidden;
+    box-shadow:0 30px 70px -16px rgba(0,0,0,.5);animation:pop .4s cubic-bezier(.2,1.2,.3,1)}
+  @keyframes pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+  /* cobalt-bubble brand header inside the modal */
+  .ok-head{position:relative;padding:26px 22px 22px;
+    background:linear-gradient(160deg,#1a4cf0,#0a2db0);color:#fff;overflow:hidden}
+  .ok-head:before{content:"";position:absolute;inset:0;
+    background:url("assets/bg-bubbles.jpg") repeat;background-size:120% auto;opacity:.55;
+    -webkit-mask-image:linear-gradient(to bottom,#000 0,#000 70%,transparent 100%);
+    mask-image:linear-gradient(to bottom,#000 0,#000 70%,transparent 100%)}
+  .ok-head>*{position:relative;z-index:2}
+  .ok-logo{height:46px;width:auto;display:block;margin:0 auto 14px;
+    filter:drop-shadow(0 2px 6px rgba(0,8,40,.5))}
+  .ok-check{width:64px;height:64px;border-radius:50%;margin:4px auto 12px;
+    background:linear-gradient(180deg,#36ccff,#1f63ff);display:grid;place-items:center;
+    color:#fff;font-size:32px;font-weight:900;
+    box-shadow:0 0 0 6px rgba(54,204,255,.22),0 10px 24px -8px rgba(13,63,214,.6)}
+  .ok-head h3{font-family:"Archivo";font-style:italic;font-weight:900;font-size:26px;letter-spacing:-.02em;line-height:1.1}
+  .ok-head .ok-tag{display:inline-block;background:var(--gold);color:#3a2600;
+    font-weight:800;font-size:11px;letter-spacing:.08em;padding:5px 11px;border-radius:999px;
+    text-transform:uppercase;margin-top:10px}
+  /* body */
+  .ok-body{padding:22px 22px 18px;text-align:left;color:var(--ink)}
+  .ok-body>p{color:var(--mut);font-size:14px;text-align:center;margin-bottom:18px;line-height:1.6}
+  .ok-body>p b{color:var(--ink)}
+  .ok-steps{list-style:none;display:flex;flex-direction:column;gap:9px;margin:0 0 16px}
+  .ok-steps li{display:flex;align-items:center;gap:11px;font-size:13.5px;color:var(--ink);
+    background:#f3f6ff;border:1px solid #e2e8f3;border-radius:11px;padding:10px 12px}
+  .ok-steps li .n{flex:none;width:24px;height:24px;border-radius:50%;
+    background:linear-gradient(160deg,#3a78ff,#0d3fd6);color:#fff;display:grid;place-items:center;
+    font-family:"Archivo";font-style:italic;font-weight:900;font-size:13px}
+  .ok-trust{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:14px;
+    padding-top:14px;border-top:1px solid #eef2fb;font-size:12px;font-weight:600;color:var(--mut)}
+  .ok-trust span{display:inline-flex;align-items:center;gap:5px}
+  .ok-trust .ck{width:14px;height:14px;border-radius:50%;background:#dcf3e3;color:var(--good);
+    font-size:9px;font-weight:900;display:grid;place-items:center}
+
+  /* ---- desktop ---- */
+  @media(min-width:880px){
+    .shell{padding:34px 24px 80px}
+    .grid{grid-template-columns:minmax(360px,420px) 1fr;gap:26px;align-items:start}
+    .hero{position:sticky;top:34px}
+    .hero .hero-inner{padding:34px 30px}
+    .row.two,.row.three{gap:16px}
+    form{padding:30px 34px}
+    .card-head{padding:30px 34px 22px}
+    .svc-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:420px){
+    .row.three{grid-template-columns:1fr}
+    .plan-grid{grid-template-columns:1fr}
+    .svc-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<div class="bg"></div>
+
+<div class="loader" id="loader">
+  <div class="l-frame"></div>
+  <div class="l-flash"></div>
+  <div class="l-ring"></div>
+  <div class="l-ring r2"></div>
+  <div class="l-sheen"></div>
+  <div class="loader-core">
+    <div class="l-mark"><img class="l-logo" src="assets/nebo-logo.png" alt="NEBO UltraWash" width="239" height="114"></div>
+  </div>
+</div>
+
+<div class="shell">
+  <div class="grid">
+
+    <!-- HERO -->
+    <aside class="hero reveal">
+      <div class="hero-inner">
+        <img class="logo" src="assets/nebo-logo.png" alt="NEBO UltraWash" width="239" height="114">
+
+        <h1 class="display">
+          <span class="pct">0%</span>
+          <span class="fin">FINANCING</span>
+        </h1>
+        <div class="tagpill"><span>Upgrade your ride. Pay over time.</span></div>
+        <div class="svc-line">
+          <span>Ceramic Coating</span><i></i><span>PPF</span><i></i><span>Vinyl Wrap</span><i></i><span>Window Tinting</span>
+        </div>
+        <div class="trust">
+          <div><div class="t">Fast</div><div class="s">Approval</div></div>
+          <div><div class="t">Easy</div><div class="s">Payments</div></div>
+          <div><div class="t">0%</div><div class="s">Interest</div></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- FORM -->
+    <main class="card reveal">
+      <div class="card-head">
+        <span class="head-pill"><span class="dot"></span>Takes ~90 seconds</span>
+        <h2>Apply for 0% Financing</h2>
+        <p>Pick your service, tell us about your car, and a NEBO specialist follows up within 12 hours to confirm your plan.</p>
+      </div>
+
+      <form id="finForm" novalidate>
+
+        <div class="progress" aria-label="Application progress">
+          <div class="seg on" data-seg="1"><i></i></div>
+          <div class="seg" data-seg="2"><i></i></div>
+          <div class="seg" data-seg="3"><i></i></div>
+          <div class="lbl">Step <b id="stepCur">1</b>/3</div>
+        </div>
+
+        <!-- STEP 1 · SERVICE (front-loaded, visual, low-stakes) -->
+        <div class="step on" data-step="1">
+          <div class="step-h">What do you want done?</div>
+          <div class="step-sub">Pick one or more. Each is available with 0% financing.</div>
+          <div class="svc-grid" id="svcGrid">
+            <label class="svc"><input type="checkbox" name="service" value="Ceramic Coating">
+              <span class="chk" aria-hidden="true"></span>
+              <img class="badge" src="assets/badge-ceramic-coating.png" alt="Ceramic Coating" loading="lazy">
+              <div class="ds">Long-term paint protection &amp; gloss</div>
+              <div class="mo">from $79/mo</div></label>
+            <label class="svc"><input type="checkbox" name="service" value="PPF">
+              <span class="chk" aria-hidden="true"></span>
+              <img class="badge" src="assets/badge-ppf.png" alt="PPF — Paint Protection Film" loading="lazy">
+              <div class="ds">Self-healing paint protection film</div>
+              <div class="mo">from $149/mo</div></label>
+            <label class="svc"><input type="checkbox" name="service" value="Vinyl Wrap">
+              <span class="chk" aria-hidden="true"></span>
+              <img class="badge" src="assets/badge-vinyl-wrap.png" alt="Vinyl Wrap" loading="lazy">
+              <div class="ds">Full or partial colour change</div>
+              <div class="mo">from $99/mo</div></label>
+            <label class="svc"><input type="checkbox" name="service" value="Window Tinting">
+              <span class="chk" aria-hidden="true"></span>
+              <img class="badge" src="assets/badge-window-tinting.png" alt="Window Tinting" loading="lazy">
+              <div class="ds">Heat &amp; UV rejection</div>
+              <div class="mo">from $29/mo</div></label>
+          </div>
+          <div class="err-msg" data-for="service" style="margin-top:10px">Select at least one service</div>
+          <div class="est-note">Estimates based on 12-month plan. Exact monthly confirmed after consultation.</div>
+          <div class="nav-row"><button type="button" class="btn-next" data-next>Continue →</button></div>
+        </div>
+
+        <!-- STEP 2 · VEHICLE + PLAN -->
+        <div class="step" data-step="2">
+          <div class="step-h">Your car &amp; how you want to pay</div>
+          <div class="step-sub">Equal monthly payments. 0% interest. Pick the plan that fits.</div>
+
+          <div class="row three">
+            <div>
+              <label class="field-label" for="vYear">Year <span class="req">*</span></label>
+              <input class="field-input" id="vYear" name="vYear" inputmode="numeric" placeholder="2021" autocomplete="off">
+              <div class="err-msg" data-for="vYear">Enter the year</div>
+            </div>
+            <div>
+              <label class="field-label" for="vMake">Make <span class="req">*</span></label>
+              <input class="field-input" id="vMake" name="vMake" placeholder="BMW" autocomplete="off">
+              <div class="err-msg" data-for="vMake">Enter the make</div>
+            </div>
+            <div>
+              <label class="field-label" for="vModel">Model <span class="req">*</span></label>
+              <input class="field-input" id="vModel" name="vModel" placeholder="M3" autocomplete="off">
+              <div class="err-msg" data-for="vModel">Enter the model</div>
+            </div>
+          </div>
+
+          <div style="margin-top:22px">
+            <label class="field-label" style="margin-bottom:10px;display:block">Plan length</label>
+            <div class="plan-grid" id="planGrid">
+              <label class="plan"><input type="radio" name="plan" value="3 months">
+                <div class="big">3</div><div class="lbl">Months</div>
+                <div class="save">Higher monthly</div></label>
+              <label class="plan"><input type="radio" name="plan" value="6 months">
+                <div class="big">6</div><div class="lbl">Months</div>
+                <div class="save">Balanced</div></label>
+              <label class="plan on"><input type="radio" name="plan" value="12 months" checked>
+                <div class="pop">Most Popular</div>
+                <div class="big">12</div><div class="lbl">Months</div>
+                <div class="save">Lowest monthly</div></label>
+            </div>
+            <div class="err-msg" data-for="plan" style="margin-top:10px">Pick a plan length</div>
+          </div>
+
+          <div class="nav-row">
+            <button type="button" class="btn-back" data-back>← Back</button>
+            <button type="button" class="btn-next" data-next>Continue →</button>
+          </div>
+        </div>
+
+        <!-- STEP 3 · CONTACT (deferred to last per MECLABS phone-field research) -->
+        <div class="step" data-step="3">
+          <div class="step-h">Where do we reach you?</div>
+          <div class="step-sub">A NEBO specialist follows up within 12 hours to confirm your plan.</div>
+
+          <div class="row two">
+            <div>
+              <label class="field-label" for="firstName">First Name <span class="req">*</span></label>
+              <input class="field-input" id="firstName" name="firstName" placeholder="Ahmad" autocomplete="given-name">
+              <div class="err-msg" data-for="firstName">Enter your first name</div>
+            </div>
+            <div>
+              <label class="field-label" for="lastName">Last Name <span class="req">*</span></label>
+              <input class="field-input" id="lastName" name="lastName" placeholder="Khalil" autocomplete="family-name">
+              <div class="err-msg" data-for="lastName">Enter your last name</div>
+            </div>
+          </div>
+          <div class="row two" style="margin-top:14px">
+            <div>
+              <label class="field-label" for="email">Email <span class="req">*</span></label>
+              <input class="field-input" type="email" id="email" name="email" placeholder="you@email.com" autocomplete="email">
+              <div class="err-msg" data-for="email">Enter a valid email</div>
+            </div>
+            <div>
+              <label class="field-label" for="phone">Phone <span class="req">*</span></label>
+              <input class="field-input" type="tel" id="phone" name="phone" placeholder="(519) 555-0142" autocomplete="tel">
+              <div class="err-msg" data-for="phone">Enter your phone number</div>
+            </div>
+          </div>
+          <div class="row" style="margin-top:14px">
+            <div>
+              <label class="field-label" for="city">City</label>
+              <input class="field-input" id="city" name="city" placeholder="Windsor" autocomplete="address-level2">
+            </div>
+          </div>
+          <div class="row" style="margin-top:14px">
+            <div>
+              <label class="field-label" for="notes">Anything else? (optional)</label>
+              <textarea class="field-input" id="notes" name="notes" rows="3" placeholder="Tell us about your car or what you're looking for…"></textarea>
+            </div>
+          </div>
+
+          <div class="consent-stack" style="margin-top:18px">
+            <label class="consent" id="consentBox">
+              <input type="checkbox" id="consent" name="consent">
+              <span>I agree NEBO UltraWash may contact me about this application by phone, text or email.</span>
+            </label>
+            <div class="err-msg" data-for="consent">Please check this box so we can contact you</div>
+
+            <label class="consent" id="ageBox">
+              <input type="checkbox" id="ageOk" name="ageOk">
+              <span>I confirm I'm <b>18 or older</b> and reside in Canada.</span>
+            </label>
+            <div class="err-msg" data-for="ageOk">Please confirm you're 18+</div>
+
+            <label class="consent" id="termsBox">
+              <input type="checkbox" id="terms" name="terms">
+              <span>I've read and agree to the <a href="#" class="consent-link">Terms</a> &amp; <a href="#" class="consent-link">Privacy Policy</a>.</span>
+            </label>
+            <div class="err-msg" data-for="terms">Please agree to the Terms &amp; Privacy Policy</div>
+          </div>
+
+          <div class="nav-row">
+            <button type="button" class="btn-back" data-back>← Back</button>
+            <button class="btn" type="submit" id="submitBtn" style="flex:1.6;margin-top:0">Get My Financing Options</button>
+          </div>
+          <div class="trust-line">
+            <span><span class="ck">✓</span> No credit check</span>
+            <span><span class="ck">✓</span> No impact to credit</span>
+            <span><span class="ck">✓</span> No payment now</span>
+          </div>
+          <div class="fineprint">
+            0% promotional financing on approved application. No interest when paid on the agreed schedule.
+            Final terms confirmed by a NEBO specialist before anything is charged.
+          </div>
+        </div>
+
+        <input type="hidden" name="ref" id="refTag" value="">
+      </form>
+    </main>
+
+  </div>
+</div>
+
+<!-- success -->
+<div class="ok" id="okOverlay">
+  <div class="ok-box">
+    <div class="ok-head">
+      <img class="ok-logo" src="assets/nebo-logo.png" alt="NEBO UltraWash">
+      <div class="ok-check">✓</div>
+      <h3>You're In!</h3>
+      <span class="ok-tag">Application Received</span>
+    </div>
+    <div class="ok-body">
+      <p>A NEBO UltraWash specialist will reach out <b>within 12 hours</b> to confirm your plan and set up your consultation. Look out for a text, call, or email.</p>
+      <ol class="ok-steps">
+        <li><span class="n">1</span>We review your application</li>
+        <li><span class="n">2</span>Specialist contacts you within 12 hours</li>
+        <li><span class="n">3</span>Confirm plan &amp; book your appointment</li>
+      </ol>
+      <div class="ok-trust">
+        <span><span class="ck">✓</span>No payment taken</span>
+        <span><span class="ck">✓</span>No credit run</span>
+        <span><span class="ck">✓</span>No obligation</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   SUBMIT ENDPOINT — single swappable point.
+   Prototype runs in DEMO mode (no backend wired). To go live:
+     1. Set DEMO:false
+     2. Point ENDPOINT at the handler (SiteGround PHP, Formspree,
+        Web3Forms, or partner webhook).
+   The handler must:
+     (a) email the application to NEBO (instant lead) — SMS the
+         applicant the same link if not already prequalified.
+     (b) send the applicant an auto-confirmation email (Resend/
+         SiteGround SMTP) — sets the 12-hour follow-up expectation.
+   Payload includes: service[], plan, vYear/Make/Model, firstName,
+   lastName, email, phone, city, notes, consent, ref (entry source),
+   submittedAt. The hidden #refTag distinguishes ad vs rep entries.
+   ============================================================ */
+const SUBMIT = { DEMO:true, ENDPOINT:"/api/financing-apply" };
+
+/* cinematic loader: let the strike→glint play, then squeegee-wipe + reveal */
+(function(){
+  let done=false;
+  const reveal=()=>{
+    if(done) return; done=true;
+    document.getElementById('loader').classList.add('done');
+    document.body.classList.add('in');
+  };
+  // fixed cinematic beat so strike→rings→light-rake→glint complete before the wipe
+  setTimeout(reveal,2050);
+})();
+
+const form=document.getElementById('finForm');
+const btn=document.getElementById('submitBtn');
+
+/* capture entry source (?ref=ad / ?ref=rep / utm_source) for one-form-two-entries flow */
+(function(){
+  const q=new URLSearchParams(location.search);
+  const ref=q.get('ref')||q.get('utm_source')||'';
+  if(ref) document.getElementById('refTag').value=ref.slice(0,40);
+})();
+
+/* selectable service cards */
+document.querySelectorAll('.svc').forEach(el=>{
+  const cb=el.querySelector('input');
+  cb.addEventListener('change',()=>{el.classList.toggle('on',cb.checked);showErr('service',false);});
+});
+/* plan radios — 12mo pre-selected in markup; sync .on on change */
+document.querySelectorAll('.plan input').forEach(r=>{
+  r.addEventListener('change',()=>{
+    document.querySelectorAll('.plan').forEach(p=>p.classList.remove('on'));
+    r.closest('.plan').classList.add('on');
+    showErr('plan',false);
+  });
+});
+
+/* light phone formatting (NA) */
+const phoneEl=document.getElementById('phone');
+phoneEl.addEventListener('input',()=>{
+  let d=phoneEl.value.replace(/\D/g,'').slice(0,10);
+  phoneEl.value = d.length>6 ? `(${d.slice(0,3)}) ${d.slice(3,6)}-${d.slice(6)}`
+    : d.length>3 ? `(${d.slice(0,3)}) ${d.slice(3)}`
+    : d;
+});
+
+function showErr(key,on){
+  const m=document.querySelector('.err-msg[data-for="'+key+'"]');
+  if(m) m.classList.toggle('show',on);
+  const f=document.getElementById(key);
+  if(f) f.classList.toggle('err',on);
+}
+function validateField(k){
+  const f=document.getElementById(k); if(!f) return true;
+  const v=f.value.trim();
+  let bad=!v;
+  if(k==='email'&&v) bad=!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  if(k==='phone'&&v) bad=v.replace(/\D/g,'').length<10;
+  showErr(k,bad); return !bad;
+}
+
+/* per-step validation */
+const STEP_RULES={
+  1:()=>{const ok=document.querySelectorAll('input[name="service"]:checked').length>0;
+        showErr('service',!ok);return ok;},
+  2:()=>{let ok=['vYear','vMake','vModel'].map(validateField).every(Boolean);
+        const plan=document.querySelector('input[name="plan"]:checked');
+        showErr('plan',!plan); if(!plan) ok=false; return ok;},
+  3:()=>{let ok=['firstName','lastName','email','phone'].map(validateField).every(Boolean);
+        const checks=[
+          ['consent','consentBox'],
+          ['ageOk','ageBox'],
+          ['terms','termsBox']
+        ];
+        checks.forEach(([id,boxId])=>{
+          const c=document.getElementById(id), box=document.getElementById(boxId);
+          showErr(id,!c.checked); box.classList.toggle('err',!c.checked);
+          if(!c.checked) ok=false;
+        });
+        return ok;}
+};
+
+/* step navigation */
+let curStep=1;
+function goStep(n){
+  document.querySelectorAll('.step').forEach(s=>s.classList.toggle('on', +s.dataset.step===n));
+  document.querySelectorAll('.progress .seg').forEach(s=>s.classList.toggle('on', +s.dataset.seg<=n));
+  document.getElementById('stepCur').textContent=n;
+  curStep=n;
+  document.querySelector('.card').scrollIntoView({behavior:'smooth',block:'start'});
+}
+document.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>{
+  if(!STEP_RULES[curStep]()){
+    const first=document.querySelector('.step.on .err-msg.show');
+    if(first) first.scrollIntoView({behavior:'smooth',block:'center'});
+    return;
+  }
+  goStep(curStep+1);
+}));
+document.querySelectorAll('[data-back]').forEach(b=>b.addEventListener('click',()=>goStep(curStep-1)));
+
+form.addEventListener('submit',async e=>{
+  e.preventDefault();
+  if(!STEP_RULES[3]()){
+    const first=document.querySelector('.step.on .err-msg.show');
+    if(first) first.scrollIntoView({behavior:'smooth',block:'center'});
+    return;
+  }
+  btn.disabled=true; btn.textContent='Submitting…';
+  const data=Object.fromEntries(new FormData(form).entries());
+  data.service=[...document.querySelectorAll('input[name="service"]:checked')].map(x=>x.value);
+  data.submittedAt=new Date().toISOString();
+
+  try{
+    if(!SUBMIT.DEMO){
+      const r=await fetch(SUBMIT.ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+      if(!r.ok) throw new Error('bad response');
+    }else{
+      console.log('[DEMO] application payload',data);
+      await new Promise(res=>setTimeout(res,650));
+    }
+    document.getElementById('okOverlay').classList.add('on');
+  }catch(err){
+    btn.disabled=false; btn.textContent='Get My Financing Options';
+    alert('Something went wrong sending your application. Please try again or call us.');
+  }
+});
+</script>
+</body>
+</html>
