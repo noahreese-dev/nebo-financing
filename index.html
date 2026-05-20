@@ -201,13 +201,13 @@
   .plan.on{border-color:var(--blue);background:#eaf0ff;box-shadow:var(--glow)}
   .plan.on .big{color:var(--blue)}
 
-  /* consent + submit */
-  .consent{display:flex;gap:11px;align-items:flex-start;background:var(--field-bg);
-    border:1.5px solid var(--field-line);border-radius:var(--rs);padding:14px;font-size:13px;color:var(--mut)}
-  .consent input{width:20px;height:20px;margin-top:1px;accent-color:var(--blue);flex:none}
+  /* consent + submit — compact rows */
+  .consent{display:flex;gap:9px;align-items:flex-start;background:var(--field-bg);
+    border:1px solid var(--field-line);border-radius:10px;padding:9px 12px;font-size:12px;color:var(--mut);line-height:1.45}
+  .consent input{width:17px;height:17px;margin-top:1px;accent-color:var(--blue);flex:none}
   .consent.err{border-color:var(--magenta);background:#fff5f8}
-  .consent-stack{display:flex;flex-direction:column;gap:10px}
-  .consent-stack .err-msg{margin-top:-4px;margin-left:34px}
+  .consent-stack{display:flex;flex-direction:column;gap:6px}
+  .consent-stack .err-msg{margin-top:-2px;margin-left:30px;font-size:11.5px}
   .consent-link{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:2px}
   .btn{
     width:100%;margin-top:18px;font-family:"Archivo";font-style:italic;font-weight:900;
