@@ -713,12 +713,6 @@
           </div>
 
           <div class="consent-stack" style="margin-top:20px">
-            <label class="consent" id="consentBox">
-              <input type="checkbox" id="consent" name="consent">
-              <span>I agree NEBO UltraWash may contact me about this application by phone, text or email.</span>
-            </label>
-            <div class="err-msg" data-for="consent">Please check this box so we can contact you</div>
-
             <label class="consent" id="ageBox">
               <input type="checkbox" id="ageOk" name="ageOk">
               <span>I confirm I'm <b>18 or older</b> and reside in Canada.</span>
@@ -902,7 +896,6 @@ const STEP_RULES={
         showErr('plan',!plan); if(!plan) ok=false; return ok;},
   3:()=>{let ok=['firstName','lastName','email','phone'].map(validateField).every(Boolean);
         const checks=[
-          ['consent','consentBox'],
           ['ageOk','ageBox'],
           ['terms','termsBox']
         ];
