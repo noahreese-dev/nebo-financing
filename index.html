@@ -698,7 +698,7 @@
 
           <div class="nav-row">
             <button type="button" class="btn-back" data-back>← Back</button>
-            <button class="btn" type="submit" id="submitBtn" style="flex:1.8;margin-top:0">Pay $0 Deposit &amp; Get Approved</button>
+            <button class="btn" type="submit" id="submitBtn" style="flex:1.8;margin-top:0">Get My 0% Financing</button>
           </div>
           <div class="trust-line">
             <span><span class="ck">✓</span> No credit check</span>
@@ -804,9 +804,6 @@ function calcPrice(){
   document.getElementById('priceRemaining').textContent=fmt(remaining);
   document.getElementById('priceMonthly').textContent=fmt(monthly);
   document.getElementById('priceMonths').textContent='('+months+' months)';
-  // Live update the submit CTA so the user sees what they're paying
-  const btn=document.getElementById('submitBtn');
-  btn.textContent = total>0 ? `Pay ${fmt(deposit)} Deposit & Get Approved` : 'Pay $0 Deposit & Get Approved';
 }
 
 /* selectable service cards */
