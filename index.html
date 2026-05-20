@@ -278,6 +278,48 @@
   /* fine print disclaimer for estimates */
   .est-note{font-size:11px;color:var(--mut);margin-top:10px;text-align:center;font-style:italic}
 
+  /* ---- price summary card (step 2) ---- */
+  .price-card{margin-top:22px;border-radius:14px;overflow:hidden;
+    background:linear-gradient(160deg,#0d3fd6,#06208f);color:#fff;
+    box-shadow:0 14px 30px -14px rgba(13,63,214,.55)}
+  .price-card .pc-head{padding:13px 18px;display:flex;justify-content:space-between;align-items:center;
+    border-bottom:1px solid rgba(255,255,255,.12);
+    font-family:"Archivo";font-style:italic;font-weight:800;font-size:11px;
+    letter-spacing:.14em;text-transform:uppercase;color:#bfd6ff}
+  .price-card .pc-head .live{display:inline-flex;align-items:center;gap:6px;font-size:10px;color:var(--cyan)}
+  .price-card .pc-head .live i{width:5px;height:5px;border-radius:50%;background:var(--cyan);
+    box-shadow:0 0 0 3px rgba(54,204,255,.22)}
+  .price-row{display:flex;justify-content:space-between;align-items:baseline;padding:10px 18px;font-size:14px;color:rgba(220,235,255,.8)}
+  .price-row b{font-family:"Archivo";font-style:italic;font-weight:900;color:#fff;font-size:17px}
+  .price-row.big{background:rgba(54,204,255,.10);padding:14px 18px;border-top:1px solid rgba(255,255,255,.10);border-bottom:1px solid rgba(255,255,255,.10)}
+  .price-row.big span{color:#fff;font-weight:600;font-size:15px}
+  .price-row.big b{font-size:24px;color:var(--cyan)}
+  .price-row .muted{font-size:11px;color:rgba(220,235,255,.55);font-weight:500}
+
+  /* ---- payment method picker (step 3) ---- */
+  .pay-method{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+  .pay-opt{position:relative;cursor:pointer;border:1.5px solid #e2e8f3;border-radius:12px;
+    padding:14px;text-align:center;background:#fff;
+    display:flex;flex-direction:column;align-items:center;gap:6px;
+    transition:border-color .16s,background .16s,box-shadow .16s;user-select:none}
+  .pay-opt:hover{border-color:#b9c8ee;background:#fafcff}
+  .pay-opt input{position:absolute;opacity:0;pointer-events:none}
+  .pay-opt .pay-ic{width:32px;height:24px;display:grid;place-items:center;
+    font-family:"Archivo";font-style:italic;font-weight:900;font-size:14px;color:var(--blue)}
+  .pay-opt .pay-ic svg{width:30px;height:22px}
+  .pay-opt .pay-lbl{font-size:13px;font-weight:700;color:var(--ink);letter-spacing:.01em}
+  .pay-opt.on{border-color:var(--blue);background:#f3f6ff;
+    box-shadow:0 0 0 3px rgba(31,99,255,.18)}
+  .pay-opt.on .pay-ic{color:#fff;background:var(--blue);border-radius:6px}
+
+  /* ---- reference code in success ---- */
+  .ref-block{margin:16px 0 0;background:#f3f6ff;border:1.5px dashed #b9c8ee;border-radius:12px;
+    padding:14px;text-align:center}
+  .ref-block .ref-lbl{font-size:10.5px;font-weight:800;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--mut);margin-bottom:4px}
+  .ref-code{font-family:"Archivo";font-style:italic;font-weight:900;font-size:24px;
+    letter-spacing:.04em;color:var(--blue);user-select:all}
+
   /* ---- cinematic entrance loader ---- */
   .loader{position:fixed;inset:0;z-index:200;display:grid;place-items:center;overflow:hidden;
     background:
@@ -471,9 +513,9 @@
     <!-- FORM -->
     <main class="card reveal">
       <div class="card-head">
-        <span class="head-pill"><span class="dot"></span>Takes ~90 seconds</span>
+        <span class="head-pill"><span class="dot"></span>Instant Approval · ~90 seconds</span>
         <h2>Apply for 0% Financing</h2>
-        <p>Pick your service, tell us about your car, and a NEBO specialist follows up within 12 hours to confirm your plan.</p>
+        <p>Pick your service, see your plan, pay <b>20% deposit</b> — get approved instantly. Driver's license verified at drop-off.</p>
       </div>
 
       <form id="finForm" novalidate>
@@ -490,26 +532,26 @@
           <div class="step-h">What do you want done?</div>
           <div class="step-sub">Pick one or more. Each is available with 0% financing.</div>
           <div class="svc-grid" id="svcGrid">
-            <label class="svc"><input type="checkbox" name="service" value="Ceramic Coating">
+            <label class="svc"><input type="checkbox" name="service" value="Ceramic Coating" data-price="1200">
               <span class="chk" aria-hidden="true"></span>
               <img class="badge" src="assets/badge-ceramic-coating.png" alt="Ceramic Coating" loading="lazy">
               <div class="ds">Long-term paint protection &amp; gloss</div>
-              <div class="mo">from $79/mo</div></label>
-            <label class="svc"><input type="checkbox" name="service" value="PPF">
+              <div class="mo">from $1,200</div></label>
+            <label class="svc"><input type="checkbox" name="service" value="PPF" data-price="1800">
               <span class="chk" aria-hidden="true"></span>
               <img class="badge" src="assets/badge-ppf.png" alt="PPF — Paint Protection Film" loading="lazy">
               <div class="ds">Self-healing paint protection film</div>
-              <div class="mo">from $149/mo</div></label>
-            <label class="svc"><input type="checkbox" name="service" value="Vinyl Wrap">
+              <div class="mo">from $1,800</div></label>
+            <label class="svc"><input type="checkbox" name="service" value="Vinyl Wrap" data-price="1200">
               <span class="chk" aria-hidden="true"></span>
               <img class="badge" src="assets/badge-vinyl-wrap.png" alt="Vinyl Wrap" loading="lazy">
               <div class="ds">Full or partial colour change</div>
-              <div class="mo">from $99/mo</div></label>
-            <label class="svc"><input type="checkbox" name="service" value="Window Tinting">
+              <div class="mo">from $1,200</div></label>
+            <label class="svc"><input type="checkbox" name="service" value="Window Tinting" data-price="350">
               <span class="chk" aria-hidden="true"></span>
               <img class="badge" src="assets/badge-window-tinting.png" alt="Window Tinting" loading="lazy">
               <div class="ds">Heat &amp; UV rejection</div>
-              <div class="mo">from $29/mo</div></label>
+              <div class="mo">from $350</div></label>
           </div>
           <div class="err-msg" data-for="service" style="margin-top:10px">Select at least one service</div>
           <div class="est-note">Estimates based on 12-month plan. Exact monthly confirmed after consultation.</div>
@@ -556,16 +598,26 @@
             <div class="err-msg" data-for="plan" style="margin-top:10px">Pick a plan length</div>
           </div>
 
+          <!-- Live price summary: total → 20% deposit → remaining → monthly -->
+          <div class="price-card" id="priceCard" aria-live="polite">
+            <div class="pc-head"><span>Your Plan</span><span class="live"><i></i>Updates as you choose</span></div>
+            <div class="price-row"><span>Service total</span><b id="priceTotal">$0</b></div>
+            <div class="price-row big"><span>Deposit today (20%)</span><b id="priceDeposit">$0</b></div>
+            <div class="price-row"><span>Remaining (0% interest)</span><b id="priceRemaining">$0</b></div>
+            <div class="price-row"><span>Monthly payment <span class="muted" id="priceMonths">(12 months)</span></span><b id="priceMonthly">$0</b></div>
+          </div>
+          <div class="est-note">Estimates pending confirmed per-service pricing. Final amounts shown before payment.</div>
+
           <div class="nav-row">
             <button type="button" class="btn-back" data-back>← Back</button>
             <button type="button" class="btn-next" data-next>Continue →</button>
           </div>
         </div>
 
-        <!-- STEP 3 · CONTACT (deferred to last per MECLABS phone-field research) -->
+        <!-- STEP 3 · CONTACT + PAY DEPOSIT (instant approval flow) -->
         <div class="step" data-step="3">
-          <div class="step-h">Where do we reach you?</div>
-          <div class="step-sub">A NEBO specialist follows up within 12 hours to confirm your plan.</div>
+          <div class="step-h">Your details &amp; deposit</div>
+          <div class="step-sub">Final step — pay 20% deposit to lock in <b>instant approval</b>.</div>
 
           <div class="row two">
             <div>
@@ -604,7 +656,27 @@
             </div>
           </div>
 
-          <div class="consent-stack" style="margin-top:18px">
+          <!-- Payment method picker — 20% deposit goes through here -->
+          <div style="margin-top:18px">
+            <label class="field-label" style="margin-bottom:10px;display:block">Pay 20% deposit with</label>
+            <div class="pay-method" id="payMethod">
+              <label class="pay-opt on"><input type="radio" name="payMethod" value="card" checked>
+                <span class="pay-ic"><svg viewBox="0 0 32 22" fill="none" aria-hidden="true">
+                  <rect x="1" y="1" width="30" height="20" rx="3" stroke="currentColor" stroke-width="2"/>
+                  <rect x="1" y="6" width="30" height="4" fill="currentColor"/>
+                  <rect x="5" y="14" width="10" height="2" fill="currentColor"/>
+                </svg></span>
+                <span class="pay-lbl">Credit / Debit Card</span></label>
+              <label class="pay-opt"><input type="radio" name="payMethod" value="paypal">
+                <span class="pay-ic"><svg viewBox="0 0 32 22" fill="none" aria-hidden="true">
+                  <path d="M7 4h10a5 5 0 010 10h-6l-1 5H6L7 4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                  <path d="M11 9h7a4 4 0 010 8h-4" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                </svg></span>
+                <span class="pay-lbl">PayPal</span></label>
+            </div>
+          </div>
+
+          <div class="consent-stack" style="margin-top:20px">
             <label class="consent" id="consentBox">
               <input type="checkbox" id="consent" name="consent">
               <span>I agree NEBO UltraWash may contact me about this application by phone, text or email.</span>
@@ -626,16 +698,16 @@
 
           <div class="nav-row">
             <button type="button" class="btn-back" data-back>← Back</button>
-            <button class="btn" type="submit" id="submitBtn" style="flex:1.6;margin-top:0">Get My Financing Options</button>
+            <button class="btn" type="submit" id="submitBtn" style="flex:1.8;margin-top:0">Pay $0 Deposit &amp; Get Approved</button>
           </div>
           <div class="trust-line">
             <span><span class="ck">✓</span> No credit check</span>
-            <span><span class="ck">✓</span> No impact to credit</span>
-            <span><span class="ck">✓</span> No payment now</span>
+            <span><span class="ck">✓</span> Instant approval</span>
+            <span><span class="ck">✓</span> 0% interest</span>
           </div>
           <div class="fineprint">
-            0% promotional financing on approved application. No interest when paid on the agreed schedule.
-            Final terms confirmed by a NEBO specialist before anything is charged.
+            20% deposit secures your appointment and approves your 0% financing plan instantly.
+            Remaining balance split into equal monthly payments on the agreed schedule. No interest when paid on time.
           </div>
         </div>
 
@@ -652,20 +724,24 @@
     <div class="ok-head">
       <img class="ok-logo" src="assets/nebo-logo.png" alt="NEBO UltraWash">
       <div class="ok-check">✓</div>
-      <h3>You're In!</h3>
-      <span class="ok-tag">Application Received</span>
+      <h3>You're Approved!</h3>
+      <span class="ok-tag">Instant Approval</span>
     </div>
     <div class="ok-body">
-      <p>A NEBO UltraWash specialist will reach out <b>within 12 hours</b> to confirm your plan and set up your consultation. Look out for a text, call, or email.</p>
+      <p>Deposit received — your 0% financing plan is locked in. <b id="okDepositAmt">$0</b> paid today, monthly installments start after your appointment.</p>
+      <div class="ref-block">
+        <div class="ref-lbl">Your Reference Code</div>
+        <div class="ref-code" id="refCode">NEBO-XXXXXX</div>
+      </div>
       <ol class="ok-steps">
-        <li><span class="n">1</span>We review your application</li>
-        <li><span class="n">2</span>Specialist contacts you within 12 hours</li>
-        <li><span class="n">3</span>Confirm plan &amp; book your appointment</li>
+        <li><span class="n">1</span>Confirmation email sent with your ref code</li>
+        <li><span class="n">2</span>Book your appointment (or call us)</li>
+        <li><span class="n">3</span>Drop off your car — we verify ID, start your service</li>
       </ol>
       <div class="ok-trust">
-        <span><span class="ck">✓</span>No payment taken</span>
-        <span><span class="ck">✓</span>No credit run</span>
-        <span><span class="ck">✓</span>No obligation</span>
+        <span><span class="ck">✓</span>0% interest</span>
+        <span><span class="ck">✓</span>Locked in</span>
+        <span><span class="ck">✓</span>No surprises</span>
       </div>
     </div>
   </div>
@@ -711,10 +787,36 @@ const btn=document.getElementById('submitBtn');
   if(ref) document.getElementById('refTag').value=ref.slice(0,40);
 })();
 
+/* ---- live price calculator ----
+   Sums selected service base prices, computes 20% deposit, splits the remainder
+   over the selected plan length, updates the visible price card + submit CTA. */
+function fmt(n){ return '$'+Math.round(n).toLocaleString(); }
+function calcPrice(){
+  const sel=[...document.querySelectorAll('input[name="service"]:checked')];
+  const total=sel.reduce((s,c)=>s+(+c.dataset.price||0),0);
+  const deposit=Math.round(total*0.20);
+  const remaining=total-deposit;
+  const planVal=(document.querySelector('input[name="plan"]:checked')?.value)||'12 months';
+  const months=parseInt(planVal,10)||12;
+  const monthly=months?Math.round(remaining/months):0;
+  document.getElementById('priceTotal').textContent=fmt(total);
+  document.getElementById('priceDeposit').textContent=fmt(deposit);
+  document.getElementById('priceRemaining').textContent=fmt(remaining);
+  document.getElementById('priceMonthly').textContent=fmt(monthly);
+  document.getElementById('priceMonths').textContent='('+months+' months)';
+  // Live update the submit CTA so the user sees what they're paying
+  const btn=document.getElementById('submitBtn');
+  btn.textContent = total>0 ? `Pay ${fmt(deposit)} Deposit & Get Approved` : 'Pay $0 Deposit & Get Approved';
+}
+
 /* selectable service cards */
 document.querySelectorAll('.svc').forEach(el=>{
   const cb=el.querySelector('input');
-  cb.addEventListener('change',()=>{el.classList.toggle('on',cb.checked);showErr('service',false);});
+  cb.addEventListener('change',()=>{
+    el.classList.toggle('on',cb.checked);
+    showErr('service',false);
+    calcPrice();
+  });
 });
 /* plan radios — 12mo pre-selected in markup; sync .on on change */
 document.querySelectorAll('.plan input').forEach(r=>{
@@ -722,8 +824,17 @@ document.querySelectorAll('.plan input').forEach(r=>{
     document.querySelectorAll('.plan').forEach(p=>p.classList.remove('on'));
     r.closest('.plan').classList.add('on');
     showErr('plan',false);
+    calcPrice();
   });
 });
+/* payment method picker selection state */
+document.querySelectorAll('.pay-opt input').forEach(r=>{
+  r.addEventListener('change',()=>{
+    document.querySelectorAll('.pay-opt').forEach(p=>p.classList.remove('on'));
+    r.closest('.pay-opt').classList.add('on');
+  });
+});
+calcPrice();
 
 /* light phone formatting (NA) */
 const phoneEl=document.getElementById('phone');
@@ -789,6 +900,13 @@ document.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',(
 }));
 document.querySelectorAll('[data-back]').forEach(b=>b.addEventListener('click',()=>goStep(curStep-1)));
 
+/* generate a clean reference code (no easily confused chars) */
+function genRef(){
+  const a='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  let s=''; for(let i=0;i<6;i++) s+=a[Math.floor(Math.random()*a.length)];
+  return 'NEBO-'+s;
+}
+
 form.addEventListener('submit',async e=>{
   e.preventDefault();
   if(!STEP_RULES[3]()){
@@ -796,23 +914,36 @@ form.addEventListener('submit',async e=>{
     if(first) first.scrollIntoView({behavior:'smooth',block:'center'});
     return;
   }
-  btn.disabled=true; btn.textContent='Submitting…';
+  const originalBtnText=btn.textContent;
+  btn.disabled=true; btn.textContent='Processing payment…';
+
   const data=Object.fromEntries(new FormData(form).entries());
   data.service=[...document.querySelectorAll('input[name="service"]:checked')].map(x=>x.value);
   data.submittedAt=new Date().toISOString();
+  // attach pricing details
+  const sel=[...document.querySelectorAll('input[name="service"]:checked')];
+  data.serviceTotal=sel.reduce((s,c)=>s+(+c.dataset.price||0),0);
+  data.deposit=Math.round(data.serviceTotal*0.20);
+  data.remaining=data.serviceTotal-data.deposit;
+  const months=parseInt((document.querySelector('input[name="plan"]:checked')?.value)||'12 months',10);
+  data.monthly=months?Math.round(data.remaining/months):0;
+  data.referenceCode=genRef();
 
   try{
     if(!SUBMIT.DEMO){
       const r=await fetch(SUBMIT.ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
       if(!r.ok) throw new Error('bad response');
     }else{
-      console.log('[DEMO] application payload',data);
-      await new Promise(res=>setTimeout(res,650));
+      console.log('[DEMO] approved application',data);
+      await new Promise(res=>setTimeout(res,900));
     }
+    // Inject deposit + reference into the success overlay
+    document.getElementById('okDepositAmt').textContent=fmt(data.deposit);
+    document.getElementById('refCode').textContent=data.referenceCode;
     document.getElementById('okOverlay').classList.add('on');
   }catch(err){
-    btn.disabled=false; btn.textContent='Get My Financing Options';
-    alert('Something went wrong sending your application. Please try again or call us.');
+    btn.disabled=false; btn.textContent=originalBtnText;
+    alert('Payment could not be processed. Please try again or call us.');
   }
 });
 </script>

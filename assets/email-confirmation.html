@@ -21,7 +21,7 @@
 <body style="margin:0;padding:0;background:#06208f;">
 
 <!-- preheader -->
-<div style="display:none;font-size:1px;color:#06208f;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">You're in. A NEBO UltraWash specialist will reach out within 12 hours to confirm your 0% financing plan.</div>
+<div style="display:none;font-size:1px;color:#06208f;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">You're approved! Your NEBO UltraWash 0% financing plan is locked in. Reference code inside.</div>
 
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#06208f;background:linear-gradient(180deg,#0d3fd6 0%,#06208f 60%);">
   <tr>
@@ -45,10 +45,10 @@
             </table>
 
             <!-- "You're In!" -->
-            <h1 class="hero-title" style="margin:0;font-family:Georgia,'Times New Roman',serif;font-style:italic;font-weight:900;font-size:54px;line-height:1;letter-spacing:-1.5px;color:#ffffff;text-shadow:0 2px 0 #0a1f66, 0 4px 14px rgba(2,10,46,.45);">You're In!</h1>
+            <h1 class="hero-title" style="margin:0;font-family:Georgia,'Times New Roman',serif;font-style:italic;font-weight:900;font-size:54px;line-height:1;letter-spacing:-1.5px;color:#ffffff;text-shadow:0 2px 0 #0a1f66, 0 4px 14px rgba(2,10,46,.45);">You're Approved!</h1>
 
             <!-- Gold pill -->
-            <div style="display:inline-block;margin-top:18px;padding:7px 16px;background:#ffc21a;color:#3a2600;font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;border-radius:999px;font-family:Arial,Helvetica,sans-serif;">Application Received</div>
+            <div style="display:inline-block;margin-top:18px;padding:7px 16px;background:#ffc21a;color:#3a2600;font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;border-radius:999px;font-family:Arial,Helvetica,sans-serif;">Instant Approval</div>
 
           </td>
         </tr>
@@ -57,7 +57,22 @@
         <tr>
           <td class="px" align="center" style="padding:34px 38px 4px;color:#0a1530;text-align:center;">
             <p style="margin:0 0 14px;font-size:17px;line-height:1.5;color:#0a1530;font-family:Arial,Helvetica,sans-serif;font-weight:600;">Hi <span style="color:#0d3fd6;">{{firstName}}</span>,</p>
-            <p style="margin:0 0 6px;font-size:15px;line-height:1.65;color:#5d6b8f;font-family:Arial,Helvetica,sans-serif;">Your <b style="color:#0a1530;">0% financing application</b> for your <b style="color:#0a1530;">{{vehicle}}</b> is in. A NEBO specialist will reach out <b style="color:#0a1530;">within 12 hours</b> to confirm your plan and book your consultation.</p>
+            <p style="margin:0 0 6px;font-size:15px;line-height:1.65;color:#5d6b8f;font-family:Arial,Helvetica,sans-serif;">Your <b style="color:#0a1530;">0% financing plan</b> for your <b style="color:#0a1530;">{{vehicle}}</b> is <b style="color:#0a1530;">locked in</b>. Your <b style="color:#0a1530;">{{deposit}}</b> deposit was received — monthly installments start after your appointment.</p>
+          </td>
+        </tr>
+
+        <!-- REFERENCE CODE — keep this for your records -->
+        <tr>
+          <td class="px" align="center" style="padding:18px 38px 4px;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f3f6ff;border:1.5px dashed #b9c8ee;border-radius:14px;">
+              <tr>
+                <td align="center" style="padding:18px 22px;">
+                  <div style="font-family:Arial,Helvetica,sans-serif;font-size:10.5px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#5d6b8f;margin-bottom:6px;">Your Reference Code</div>
+                  <div style="font-family:Georgia,serif;font-style:italic;font-weight:900;font-size:28px;letter-spacing:1.2px;color:#0d3fd6;">{{referenceCode}}</div>
+                  <div style="font-family:Arial,Helvetica,sans-serif;font-size:11.5px;color:#8a96a8;margin-top:6px;">Save this — show it at your appointment.</div>
+                </td>
+              </tr>
+            </table>
           </td>
         </tr>
 
@@ -81,8 +96,18 @@
               </tr>
               <tr><td colspan="2" style="border-top:1px solid #e2e8f3;font-size:0;line-height:0;">&nbsp;</td></tr>
               <tr>
-                <td style="padding:14px 18px;font-size:12.5px;color:#5d6b8f;font-family:Arial,Helvetica,sans-serif;letter-spacing:.04em;text-transform:uppercase;font-weight:700;">Plan length</td>
-                <td align="right" style="padding:14px 18px;font-size:14.5px;color:#0a1530;font-weight:700;font-family:Arial,Helvetica,sans-serif;">{{plan}}</td>
+                <td style="padding:14px 18px;font-size:12.5px;color:#5d6b8f;font-family:Arial,Helvetica,sans-serif;letter-spacing:.04em;text-transform:uppercase;font-weight:700;">Service total</td>
+                <td align="right" style="padding:14px 18px;font-size:14.5px;color:#0a1530;font-weight:700;font-family:Arial,Helvetica,sans-serif;">{{serviceTotal}}</td>
+              </tr>
+              <tr><td colspan="2" style="border-top:1px solid #e2e8f3;font-size:0;line-height:0;">&nbsp;</td></tr>
+              <tr>
+                <td style="padding:14px 18px;font-size:12.5px;color:#5d6b8f;font-family:Arial,Helvetica,sans-serif;letter-spacing:.04em;text-transform:uppercase;font-weight:700;">Deposit paid (20%)</td>
+                <td align="right" style="padding:14px 18px;font-size:14.5px;color:#16a34a;font-weight:700;font-family:Arial,Helvetica,sans-serif;">{{deposit}} ✓</td>
+              </tr>
+              <tr><td colspan="2" style="border-top:1px solid #e2e8f3;font-size:0;line-height:0;">&nbsp;</td></tr>
+              <tr>
+                <td style="padding:14px 18px;font-size:12.5px;color:#5d6b8f;font-family:Arial,Helvetica,sans-serif;letter-spacing:.04em;text-transform:uppercase;font-weight:700;">Monthly &nbsp; <span style="font-weight:600;text-transform:none;letter-spacing:0;color:#8a96a8;">({{plan}}, 0% interest)</span></td>
+                <td align="right" style="padding:14px 18px;font-size:14.5px;color:#0a1530;font-weight:700;font-family:Arial,Helvetica,sans-serif;">{{monthly}}</td>
               </tr>
             </table>
           </td>
@@ -103,7 +128,7 @@
                     <td width="30" height="30" align="center" valign="middle" bgcolor="#0d3fd6" style="background:#0d3fd6;background-image:linear-gradient(160deg,#3a78ff,#0d3fd6);border-radius:15px;color:#ffffff;font-family:Georgia,serif;font-style:italic;font-weight:900;font-size:14px;line-height:30px;mso-line-height-rule:exactly;">1</td>
                   </tr></table>
                 </td>
-                <td valign="middle" style="padding:6px 0 6px 14px;font-size:14.5px;color:#0a1530;font-family:Arial,Helvetica,sans-serif;line-height:1.5;font-weight:600;">We review your application.</td>
+                <td valign="middle" style="padding:6px 0 6px 14px;font-size:14.5px;color:#0a1530;font-family:Arial,Helvetica,sans-serif;line-height:1.5;font-weight:600;">Save your reference code <span style="color:#0d3fd6;">{{referenceCode}}</span>.</td>
               </tr>
               <tr><td colspan="2" style="font-size:0;line-height:0;height:6px;">&nbsp;</td></tr>
               <tr>
@@ -112,7 +137,7 @@
                     <td width="30" height="30" align="center" valign="middle" bgcolor="#0d3fd6" style="background:#0d3fd6;background-image:linear-gradient(160deg,#3a78ff,#0d3fd6);border-radius:15px;color:#ffffff;font-family:Georgia,serif;font-style:italic;font-weight:900;font-size:14px;line-height:30px;mso-line-height-rule:exactly;">2</td>
                   </tr></table>
                 </td>
-                <td valign="middle" style="padding:6px 0 6px 14px;font-size:14.5px;color:#0a1530;font-family:Arial,Helvetica,sans-serif;line-height:1.5;font-weight:600;">A NEBO specialist contacts you within <span style="color:#0d3fd6;">12 hours</span>.</td>
+                <td valign="middle" style="padding:6px 0 6px 14px;font-size:14.5px;color:#0a1530;font-family:Arial,Helvetica,sans-serif;line-height:1.5;font-weight:600;">Book your appointment at <a href="https://nebo-financing-form.vercel.app/detailing" style="color:#0d3fd6;text-decoration:underline;font-weight:700;">our booking page</a>.</td>
               </tr>
               <tr><td colspan="2" style="font-size:0;line-height:0;height:6px;">&nbsp;</td></tr>
               <tr>
@@ -121,7 +146,7 @@
                     <td width="30" height="30" align="center" valign="middle" bgcolor="#0d3fd6" style="background:#0d3fd6;background-image:linear-gradient(160deg,#3a78ff,#0d3fd6);border-radius:15px;color:#ffffff;font-family:Georgia,serif;font-style:italic;font-weight:900;font-size:14px;line-height:30px;mso-line-height-rule:exactly;">3</td>
                   </tr></table>
                 </td>
-                <td valign="middle" style="padding:6px 0 6px 14px;font-size:14.5px;color:#0a1530;font-family:Arial,Helvetica,sans-serif;line-height:1.5;font-weight:600;">Confirm your plan &amp; book your appointment.</td>
+                <td valign="middle" style="padding:6px 0 6px 14px;font-size:14.5px;color:#0a1530;font-family:Arial,Helvetica,sans-serif;line-height:1.5;font-weight:600;">Drop off your car &mdash; we verify ID and start your service.</td>
               </tr>
             </table>
           </td>
@@ -133,9 +158,9 @@
             <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #eef2fb;">
               <tr>
                 <td align="center" style="padding:18px 6px 0;font-family:Arial,Helvetica,sans-serif;font-size:12.5px;color:#0a1530;font-weight:600;line-height:1.8;">
-                  <span style="display:inline-block;margin:0 8px;color:#16a34a;font-weight:900;">✓</span>No payment taken
-                  <span style="display:inline-block;margin:0 8px;color:#16a34a;font-weight:900;">✓</span>No credit check
-                  <span style="display:inline-block;margin:0 8px;color:#16a34a;font-weight:900;">✓</span>No obligation
+                  <span style="display:inline-block;margin:0 8px;color:#16a34a;font-weight:900;">✓</span>0% interest
+                  <span style="display:inline-block;margin:0 8px;color:#16a34a;font-weight:900;">✓</span>Locked in
+                  <span style="display:inline-block;margin:0 8px;color:#16a34a;font-weight:900;">✓</span>No surprises
                 </td>
               </tr>
             </table>
