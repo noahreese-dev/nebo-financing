@@ -278,6 +278,19 @@
   /* fine print disclaimer for estimates */
   .est-note{font-size:11px;color:var(--mut);margin-top:10px;text-align:center;font-style:italic}
 
+  /* ---- signature pad ---- */
+  .sig-block{margin-top:18px}
+  .sig-wrap{position:relative;background:#fff;border:1.5px solid var(--field-line);border-radius:10px;
+    overflow:hidden;touch-action:none}
+  .sig-wrap.err{border-color:var(--magenta);background:#fff5f8}
+  .sig-wrap canvas{display:block;width:100%;height:160px;cursor:crosshair;touch-action:none}
+  .sig-watermark{position:absolute;bottom:10px;left:0;right:0;text-align:center;font-size:12px;
+    color:#b5becf;font-style:italic;pointer-events:none;user-select:none}
+  .sig-clear{position:absolute;top:8px;right:10px;font:inherit;font-size:11px;font-weight:700;
+    color:var(--mut);background:#f3f6ff;border:1px solid var(--field-line);border-radius:6px;
+    padding:4px 10px;cursor:pointer}
+  .sig-clear:hover{color:var(--ink);border-color:#a8b6dc}
+
   /* ---- price summary card (step 2) ---- */
   .price-card{margin-top:22px;border-radius:14px;overflow:hidden;
     background:linear-gradient(160deg,#0d3fd6,#06208f);color:#fff;
@@ -742,6 +755,18 @@
             <div class="err-msg" data-for="terms">Please agree to the Terms &amp; Privacy Policy</div>
           </div>
 
+          <!-- Digital signature -->
+          <div class="sig-block">
+            <label class="field-label">Sign to confirm <span class="req">*</span></label>
+            <div class="sig-wrap" id="sigWrap">
+              <canvas id="sigCanvas"></canvas>
+              <button type="button" class="sig-clear" id="sigClear" aria-label="Clear signature">Clear</button>
+              <span class="sig-watermark" id="sigWatermark">Sign here with your finger or mouse</span>
+            </div>
+            <input type="hidden" name="signatureImage" id="signatureImage">
+            <div class="err-msg" data-for="signature">Please sign above</div>
+          </div>
+
           <div class="nav-row">
             <button type="button" class="btn-back" data-back>← Back</button>
             <button class="btn" type="submit" id="submitBtn" style="flex:1.8;margin-top:0">Get My 0% Financing</button>
@@ -920,6 +945,11 @@ const STEP_RULES={
           showErr(id,!c.checked); box.classList.toggle('err',!c.checked);
           if(!c.checked) ok=false;
         });
+        // signature required
+        const sigOk=window.sigHasDrawn && window.sigHasDrawn();
+        showErr('signature',!sigOk);
+        document.getElementById('sigWrap').classList.toggle('err',!sigOk);
+        if(!sigOk) ok=false;
         return ok;}
 };
 
@@ -949,6 +979,44 @@ function genRef(){
   return 'NEBO-'+s;
 }
 
+/* ---- signature pad ---- */
+(function sigPad(){
+  const c=document.getElementById('sigCanvas');
+  if(!c) return;
+  const wrap=document.getElementById('sigWrap');
+  const wm=document.getElementById('sigWatermark');
+  const clearBtn=document.getElementById('sigClear');
+  const hidden=document.getElementById('signatureImage');
+  const ctx=c.getContext('2d');
+  let drawing=false,strokes=[],cur=null;
+  function setup(){
+    const r=c.getBoundingClientRect();
+    const dpr=window.devicePixelRatio||1;
+    c.width=r.width*dpr; c.height=r.height*dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    ctx.lineCap='round'; ctx.lineJoin='round'; ctx.lineWidth=2.4; ctx.strokeStyle='#0a1530';
+    redraw();
+  }
+  function redraw(){
+    const r=c.getBoundingClientRect();
+    ctx.clearRect(0,0,r.width,r.height);
+    strokes.forEach(s=>{ctx.beginPath();s.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.stroke();});
+  }
+  function pos(e){const r=c.getBoundingClientRect();return {x:e.clientX-r.left,y:e.clientY-r.top};}
+  function start(e){e.preventDefault();c.setPointerCapture&&c.setPointerCapture(e.pointerId);drawing=true;cur=[pos(e)];strokes.push(cur);wm.style.display='none';}
+  function move(e){if(!drawing)return;e.preventDefault();cur.push(pos(e));redraw();}
+  function endStroke(){if(!drawing)return;drawing=false;hidden.value=c.toDataURL('image/png');}
+  c.addEventListener('pointerdown',start);
+  c.addEventListener('pointermove',move);
+  c.addEventListener('pointerup',endStroke);
+  c.addEventListener('pointercancel',endStroke);
+  clearBtn.addEventListener('click',()=>{strokes=[];hidden.value='';wm.style.display='';wrap.classList.remove('err');showErr('signature',false);redraw();});
+  let ro=null;
+  if('ResizeObserver' in window){ro=new ResizeObserver(setup);ro.observe(c);}
+  setup();
+  window.sigHasDrawn=()=>strokes.length>0;
+})();
+
 form.addEventListener('submit',async e=>{
   e.preventDefault();
   if(!STEP_RULES[3]()){
@@ -971,21 +1039,35 @@ form.addEventListener('submit',async e=>{
   data.monthly=months?Math.round(data.remaining/months):0;
   data.referenceCode=genRef();
 
+  /* MYFC-mirror flow: in production this is where we'd POST to /api/create-checkout
+     and redirect to Stripe Checkout. Stripe's success redirect then lands on /confirmed.
+     In DEMO mode we skip the Stripe hop and go straight to /confirmed with the payload
+     stored in sessionStorage so the success page can render personalized content. */
   try{
     if(!SUBMIT.DEMO){
+      // PRODUCTION: POST to /api/create-checkout → get Stripe URL → redirect
       const r=await fetch(SUBMIT.ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
       if(!r.ok) throw new Error('bad response');
-    }else{
-      console.log('[DEMO] approved application',data);
-      await new Promise(res=>setTimeout(res,900));
+      const j=await r.json();
+      if(j && j.url){ window.location.href=j.url; return; }
+      throw new Error('no checkout url');
     }
-    // Inject deposit + reference into the success overlay
-    document.getElementById('okDepositAmt').textContent=fmt(data.deposit);
-    document.getElementById('refCode').textContent=data.referenceCode;
-    const ov=document.getElementById('okOverlay');
-    ov.classList.add('on');
-    // Ensure the modal starts at the top of view on mobile (taller-than-viewport case)
-    requestAnimationFrame(()=>ov.scrollTop=0);
+    // DEMO: simulate payment latency then route to /confirmed
+    console.log('[DEMO] approved application',data);
+    await new Promise(res=>setTimeout(res,650));
+    sessionStorage.setItem('nebo_confirmation',JSON.stringify({
+      referenceCode:data.referenceCode,
+      firstName:data.firstName, lastName:data.lastName,
+      email:data.email, phone:data.phone,
+      vehicle:`${data.vYear||''} ${data.vMake||''} ${data.vModel||''}`.trim(),
+      services:data.service, plan:data.plan,
+      serviceTotal:data.serviceTotal, deposit:data.deposit,
+      remaining:data.remaining, monthly:data.monthly,
+      signatureImage:document.getElementById('signatureImage').value||'',
+      payMethod:data.payMethod||'card',
+      submittedAt:data.submittedAt
+    }));
+    window.location.href='/confirmed';
   }catch(err){
     btn.disabled=false; btn.textContent=originalBtnText;
     alert('Payment could not be processed. Please try again or call us.');
