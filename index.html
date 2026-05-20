@@ -390,12 +390,25 @@
   .ok-trust .ck{width:14px;height:14px;border-radius:50%;background:#dcf3e3;color:var(--good);
     font-size:9px;font-weight:900;display:grid;place-items:center}
 
+  /* slight optical-centering nudge for the italic FINANCING wordmark */
+  .hero h1 .fin{transform:translateX(-3px)}
+
   /* ---- desktop ---- */
   @media(min-width:880px){
     .shell{padding:42px 28px 90px;max-width:1200px}
     .grid{grid-template-columns:minmax(440px,520px) 1fr;gap:36px;align-items:start}
-    .hero{position:sticky;top:42px}
-    .hero .hero-inner{padding:48px 38px 44px}
+    /* Hide the page-wide bubble layer at desktop — bubbles move onto the hero panel */
+    .bg:before{display:none}
+    /* Hero becomes a self-contained bubbly cobalt panel with its own bubble bg */
+    .hero{position:sticky;top:42px;
+      background:linear-gradient(160deg,#1a4cf0,#0a2db0);
+      box-shadow:0 24px 50px -20px rgba(0,8,40,.6)}
+    .hero:before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+      background:url("assets/bg-bubbles.jpg") repeat;background-size:560px auto;opacity:.6}
+    /* Subtle inner shadow at bottom for depth so the panel reads dimensional */
+    .hero:after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+      background:linear-gradient(180deg,transparent 55%,rgba(6,32,143,.35))}
+    .hero .hero-inner{padding:48px 38px 44px;position:relative;z-index:2}
     .hero h1 .pct{font-size:clamp(86px,8.5vw,128px)}
     .hero h1 .fin{font-size:clamp(46px,4.6vw,68px)}
     .row.two,.row.three{gap:18px}
@@ -403,8 +416,6 @@
     .card-head{padding:34px 38px 24px}
     .svc-grid{grid-template-columns:1fr 1fr}
   }
-  /* slight optical-centering nudge for the italic FINANCING wordmark */
-  .hero h1 .fin{transform:translateX(-3px)}
   @media(max-width:420px){
     .row.three{grid-template-columns:1fr}
     .plan-grid{grid-template-columns:1fr}
