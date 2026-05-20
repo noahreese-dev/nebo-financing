@@ -12,9 +12,25 @@
   a{color:#0d3fd6;text-decoration:underline}
   @media only screen and (max-width:600px){
     .container{width:100% !important;border-radius:14px !important}
-    .px{padding-left:22px !important;padding-right:22px !important}
-    .hero-title{font-size:44px !important;letter-spacing:-1px !important}
+    .px{padding-left:20px !important;padding-right:20px !important}
+    .hero-title{font-size:42px !important;letter-spacing:-1px !important}
+    .head-pad{padding:32px 18px 28px !important}
+    .logo-img{width:170px !important}
+    .check-cell{width:60px !important;height:60px !important;border-radius:30px !important;
+      font-size:30px !important;line-height:60px !important}
+    .ref-code-em{font-size:22px !important;letter-spacing:.6px !important}
+    .ref-pad{padding:14px 16px !important}
+    .sum-cell{padding:11px 13px !important;font-size:12px !important}
+    .sum-cell-r{padding:11px 13px !important;font-size:13.5px !important}
+    .step-cell{padding:5px 0 5px 10px !important;font-size:13.5px !important}
+    .trust-cell{font-size:12px !important;line-height:1.9 !important}
     .hide-mobile{display:none !important}
+  }
+  @media only screen and (max-width:380px){
+    .px{padding-left:16px !important;padding-right:16px !important}
+    .hero-title{font-size:36px !important}
+    .ref-code-em{font-size:19px !important}
+    .logo-img{width:150px !important}
   }
 </style>
 </head>
@@ -32,15 +48,15 @@
 
         <!-- HEADER: cobalt + bubbles + centered logo + checkmark + title -->
         <tr>
-          <td align="center" style="background:#0a2db0;background-image:url('https://nebo-financing-form.vercel.app/assets/bg-bubbles.jpg'),linear-gradient(160deg,#1a4cf0,#0a2db0);background-repeat:repeat;background-position:center top;background-size:cover;padding:44px 24px 38px;text-align:center;color:#ffffff;">
+          <td align="center" class="head-pad" style="background:#0a2db0;background-image:url('https://nebo-financing-form.vercel.app/assets/bg-bubbles.jpg'),linear-gradient(160deg,#1a4cf0,#0a2db0);background-repeat:repeat;background-position:center top;background-size:cover;padding:44px 24px 38px;text-align:center;color:#ffffff;">
 
             <!-- Logo (centered) -->
-            <img src="https://nebo-financing-form.vercel.app/assets/nebo-logo.png" alt="NEBO UltraWash" width="220" style="height:auto;margin:0 auto 26px;display:block;">
+            <img class="logo-img" src="https://nebo-financing-form.vercel.app/assets/nebo-logo.png" alt="NEBO UltraWash" width="220" style="height:auto;margin:0 auto 26px;display:block;">
 
             <!-- Cyan-glow checkmark -->
             <table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto 18px;">
               <tr>
-                <td width="76" height="76" align="center" valign="middle" bgcolor="#1f63ff" style="background:#1f63ff;background-image:linear-gradient(180deg,#36ccff 0%,#1f63ff 100%);border-radius:38px;color:#ffffff;font-size:38px;font-weight:900;font-family:Arial,Helvetica,sans-serif;line-height:76px;mso-line-height-rule:exactly;text-align:center;box-shadow:0 0 0 8px rgba(54,204,255,.22),0 16px 30px -10px rgba(13,63,214,.6);">✓</td>
+                <td class="check-cell" width="76" height="76" align="center" valign="middle" bgcolor="#1f63ff" style="background:#1f63ff;background-image:linear-gradient(180deg,#36ccff 0%,#1f63ff 100%);border-radius:38px;color:#ffffff;font-size:38px;font-weight:900;font-family:Arial,Helvetica,sans-serif;line-height:76px;mso-line-height-rule:exactly;text-align:center;box-shadow:0 0 0 8px rgba(54,204,255,.22),0 16px 30px -10px rgba(13,63,214,.6);">✓</td>
               </tr>
             </table>
 
@@ -66,9 +82,9 @@
           <td class="px" align="center" style="padding:18px 38px 4px;">
             <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f3f6ff;border:1.5px dashed #b9c8ee;border-radius:14px;">
               <tr>
-                <td align="center" style="padding:18px 22px;">
+                <td align="center" class="ref-pad" style="padding:18px 22px;">
                   <div style="font-family:Arial,Helvetica,sans-serif;font-size:10.5px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#5d6b8f;margin-bottom:6px;">Your Reference Code</div>
-                  <div style="font-family:Georgia,serif;font-style:italic;font-weight:900;font-size:28px;letter-spacing:1.2px;color:#0d3fd6;">{{referenceCode}}</div>
+                  <div class="ref-code-em" style="font-family:Georgia,serif;font-style:italic;font-weight:900;font-size:28px;letter-spacing:1.2px;color:#0d3fd6;word-break:break-all;">{{referenceCode}}</div>
                   <div style="font-family:Arial,Helvetica,sans-serif;font-size:11.5px;color:#8a96a8;margin-top:6px;">Save this — show it at your appointment.</div>
                 </td>
               </tr>
@@ -86,28 +102,28 @@
             </table>
             <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f3f6ff;border:1px solid #e2e8f3;border-radius:14px;overflow:hidden;">
               <tr>
-                <td style="padding:14px 18px;font-size:12.5px;color:#5d6b8f;font-family:Arial,Helvetica,sans-serif;letter-spacing:.04em;text-transform:uppercase;font-weight:700;">Vehicle</td>
-                <td align="right" style="padding:14px 18px;font-size:14.5px;color:#0a1530;font-weight:700;font-family:Arial,Helvetica,sans-serif;">{{vehicle}}</td>
+                <td class="sum-cell" style="padding:14px 18px;font-size:12.5px;color:#5d6b8f;font-family:Arial,Helvetica,sans-serif;letter-spacing:.04em;text-transform:uppercase;font-weight:700;">Vehicle</td>
+                <td align="right" class="sum-cell-r" style="padding:14px 18px;font-size:14.5px;color:#0a1530;font-weight:700;font-family:Arial,Helvetica,sans-serif;">{{vehicle}}</td>
               </tr>
               <tr><td colspan="2" style="border-top:1px solid #e2e8f3;font-size:0;line-height:0;">&nbsp;</td></tr>
               <tr>
-                <td style="padding:14px 18px;font-size:12.5px;color:#5d6b8f;font-family:Arial,Helvetica,sans-serif;letter-spacing:.04em;text-transform:uppercase;font-weight:700;">Service(s)</td>
-                <td align="right" style="padding:14px 18px;font-size:14.5px;color:#0a1530;font-weight:700;font-family:Arial,Helvetica,sans-serif;">{{services}}</td>
+                <td class="sum-cell" style="padding:14px 18px;font-size:12.5px;color:#5d6b8f;font-family:Arial,Helvetica,sans-serif;letter-spacing:.04em;text-transform:uppercase;font-weight:700;">Service(s)</td>
+                <td align="right" class="sum-cell-r" style="padding:14px 18px;font-size:14.5px;color:#0a1530;font-weight:700;font-family:Arial,Helvetica,sans-serif;">{{services}}</td>
               </tr>
               <tr><td colspan="2" style="border-top:1px solid #e2e8f3;font-size:0;line-height:0;">&nbsp;</td></tr>
               <tr>
-                <td style="padding:14px 18px;font-size:12.5px;color:#5d6b8f;font-family:Arial,Helvetica,sans-serif;letter-spacing:.04em;text-transform:uppercase;font-weight:700;">Service total</td>
-                <td align="right" style="padding:14px 18px;font-size:14.5px;color:#0a1530;font-weight:700;font-family:Arial,Helvetica,sans-serif;">{{serviceTotal}}</td>
+                <td class="sum-cell" style="padding:14px 18px;font-size:12.5px;color:#5d6b8f;font-family:Arial,Helvetica,sans-serif;letter-spacing:.04em;text-transform:uppercase;font-weight:700;">Service total</td>
+                <td align="right" class="sum-cell-r" style="padding:14px 18px;font-size:14.5px;color:#0a1530;font-weight:700;font-family:Arial,Helvetica,sans-serif;">{{serviceTotal}}</td>
               </tr>
               <tr><td colspan="2" style="border-top:1px solid #e2e8f3;font-size:0;line-height:0;">&nbsp;</td></tr>
               <tr>
-                <td style="padding:14px 18px;font-size:12.5px;color:#5d6b8f;font-family:Arial,Helvetica,sans-serif;letter-spacing:.04em;text-transform:uppercase;font-weight:700;">Deposit paid (20%)</td>
-                <td align="right" style="padding:14px 18px;font-size:14.5px;color:#16a34a;font-weight:700;font-family:Arial,Helvetica,sans-serif;">{{deposit}} ✓</td>
+                <td class="sum-cell" style="padding:14px 18px;font-size:12.5px;color:#5d6b8f;font-family:Arial,Helvetica,sans-serif;letter-spacing:.04em;text-transform:uppercase;font-weight:700;">Deposit paid (20%)</td>
+                <td align="right" class="sum-cell-r" style="padding:14px 18px;font-size:14.5px;color:#16a34a;font-weight:700;font-family:Arial,Helvetica,sans-serif;">{{deposit}} ✓</td>
               </tr>
               <tr><td colspan="2" style="border-top:1px solid #e2e8f3;font-size:0;line-height:0;">&nbsp;</td></tr>
               <tr>
-                <td style="padding:14px 18px;font-size:12.5px;color:#5d6b8f;font-family:Arial,Helvetica,sans-serif;letter-spacing:.04em;text-transform:uppercase;font-weight:700;">Monthly &nbsp; <span style="font-weight:600;text-transform:none;letter-spacing:0;color:#8a96a8;">({{plan}}, 0% interest)</span></td>
-                <td align="right" style="padding:14px 18px;font-size:14.5px;color:#0a1530;font-weight:700;font-family:Arial,Helvetica,sans-serif;">{{monthly}}</td>
+                <td class="sum-cell" style="padding:14px 18px;font-size:12.5px;color:#5d6b8f;font-family:Arial,Helvetica,sans-serif;letter-spacing:.04em;text-transform:uppercase;font-weight:700;">Monthly &nbsp; <span style="font-weight:600;text-transform:none;letter-spacing:0;color:#8a96a8;">({{plan}}, 0% interest)</span></td>
+                <td align="right" class="sum-cell-r" style="padding:14px 18px;font-size:14.5px;color:#0a1530;font-weight:700;font-family:Arial,Helvetica,sans-serif;">{{monthly}}</td>
               </tr>
             </table>
           </td>
@@ -128,7 +144,7 @@
                     <td width="30" height="30" align="center" valign="middle" bgcolor="#0d3fd6" style="background:#0d3fd6;background-image:linear-gradient(160deg,#3a78ff,#0d3fd6);border-radius:15px;color:#ffffff;font-family:Georgia,serif;font-style:italic;font-weight:900;font-size:14px;line-height:30px;mso-line-height-rule:exactly;">1</td>
                   </tr></table>
                 </td>
-                <td valign="middle" style="padding:6px 0 6px 14px;font-size:14.5px;color:#0a1530;font-family:Arial,Helvetica,sans-serif;line-height:1.5;font-weight:600;">Save your reference code <span style="color:#0d3fd6;">{{referenceCode}}</span>.</td>
+                <td valign="middle" class="step-cell" style="padding:6px 0 6px 14px;font-size:14.5px;color:#0a1530;font-family:Arial,Helvetica,sans-serif;line-height:1.5;font-weight:600;">Save your reference code <span style="color:#0d3fd6;">{{referenceCode}}</span>.</td>
               </tr>
               <tr><td colspan="2" style="font-size:0;line-height:0;height:6px;">&nbsp;</td></tr>
               <tr>
@@ -137,7 +153,7 @@
                     <td width="30" height="30" align="center" valign="middle" bgcolor="#0d3fd6" style="background:#0d3fd6;background-image:linear-gradient(160deg,#3a78ff,#0d3fd6);border-radius:15px;color:#ffffff;font-family:Georgia,serif;font-style:italic;font-weight:900;font-size:14px;line-height:30px;mso-line-height-rule:exactly;">2</td>
                   </tr></table>
                 </td>
-                <td valign="middle" style="padding:6px 0 6px 14px;font-size:14.5px;color:#0a1530;font-family:Arial,Helvetica,sans-serif;line-height:1.5;font-weight:600;">Book your appointment at <a href="https://nebo-financing-form.vercel.app/detailing" style="color:#0d3fd6;text-decoration:underline;font-weight:700;">our booking page</a>.</td>
+                <td valign="middle" class="step-cell" style="padding:6px 0 6px 14px;font-size:14.5px;color:#0a1530;font-family:Arial,Helvetica,sans-serif;line-height:1.5;font-weight:600;">Book your appointment at <a href="https://nebo-financing-form.vercel.app/detailing" style="color:#0d3fd6;text-decoration:underline;font-weight:700;">our booking page</a>.</td>
               </tr>
               <tr><td colspan="2" style="font-size:0;line-height:0;height:6px;">&nbsp;</td></tr>
               <tr>
@@ -146,7 +162,7 @@
                     <td width="30" height="30" align="center" valign="middle" bgcolor="#0d3fd6" style="background:#0d3fd6;background-image:linear-gradient(160deg,#3a78ff,#0d3fd6);border-radius:15px;color:#ffffff;font-family:Georgia,serif;font-style:italic;font-weight:900;font-size:14px;line-height:30px;mso-line-height-rule:exactly;">3</td>
                   </tr></table>
                 </td>
-                <td valign="middle" style="padding:6px 0 6px 14px;font-size:14.5px;color:#0a1530;font-family:Arial,Helvetica,sans-serif;line-height:1.5;font-weight:600;">Drop off your car &mdash; we verify ID and start your service.</td>
+                <td valign="middle" class="step-cell" style="padding:6px 0 6px 14px;font-size:14.5px;color:#0a1530;font-family:Arial,Helvetica,sans-serif;line-height:1.5;font-weight:600;">Drop off your car &mdash; we verify ID and start your service.</td>
               </tr>
             </table>
           </td>
